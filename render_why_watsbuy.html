@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1080px;
+    height: 680px;
+    background: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Inter, Arial, sans-serif;
+    position: relative;
+    overflow: hidden;
+    color: #0A1C44;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Soft Ambient Background */
+  .bg-shape-1 {
+    position: absolute;
+    width: 780px;
+    height: 620px;
+    right: -40px;
+    top: 30px;
+    background: radial-gradient(ellipse at center, rgba(235, 242, 255, 0.85) 0%, rgba(240, 246, 255, 0.5) 50%, rgba(255, 255, 255, 0) 75%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .bg-shape-2 {
+    position: absolute;
+    width: 520px;
+    height: 520px;
+    left: 40px;
+    top: 60px;
+    background: radial-gradient(circle, rgba(238, 248, 242, 0.7) 0%, rgba(255, 255, 255, 0) 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .canvas {
+    position: relative;
+    width: 1080px;
+    height: 680px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ================= LEFT COLUMN: FEATURE PILLS ================= */
+  .left-features {
+    position: absolute;
+    left: 46px;
+    top: 155px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    z-index: 30;
+  }
+  .feature-pill {
+    background: #FFFFFF;
+    border-radius: 20px;
+    padding: 10px 18px 10px 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 8px 24px rgba(10, 28, 68, 0.08), 0 2px 6px rgba(10, 28, 68, 0.04);
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    width: 220px;
+  }
+  .pill-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .pill-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+  .pill-text {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #1E293B;
+    letter-spacing: -0.2px;
+  }
+
+  /* Pill Color Schemes */
+  .pill-1 .pill-icon { background: #EEF8F2; color: #079D4F; }
+  .pill-2 .pill-icon { background: #E0F2FE; color: #0284C7; }
+  .pill-3 .pill-icon { background: #F3E8FF; color: #9333EA; }
+  .pill-4 .pill-icon { background: #FEF3C7; color: #D97706; }
+
+  /* ================= CENTER: PHONE MOCKUP ================= */
+  .phone-wrap {
+    position: absolute;
+    left: 295px;
+    top: 48px;
+    width: 334px;
+    height: 588px;
+    background: #111827;
+    border-radius: 44px;
+    padding: 9px;
+    box-shadow: 0 28px 70px rgba(10, 28, 68, 0.18), 0 8px 24px rgba(10, 28, 68, 0.08);
+    border: 2px solid #27272A;
+    z-index: 20;
+  }
+  .screen {
+    width: 100%;
+    height: 100%;
+    background: #EFEAE2;
+    border-radius: 36px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Status Bar */
+  .status-bar {
+    height: 32px;
+    background: #008069;
+    color: #FFFFFF;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 0 20px 4px;
+    font-size: 11px;
+    font-weight: 600;
+  }
+  .notch {
+    position: absolute;
+    top: 7px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 18px;
+    background: #111827;
+    border-radius: 12px;
+  }
+
+  /* WhatsApp Header */
+  .wa-header {
+    height: 52px;
+    background: #008069;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    gap: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+  }
+  .wa-back { font-size: 20px; line-height: 1; }
+  .wa-avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .wa-avatar svg { width: 22px; height: 22px; }
+  .wa-info { flex: 1; }
+  .wa-name-row { display: flex; align-items: center; gap: 4px; }
+  .wa-name { font-size: 14px; font-weight: 700; color: #FFFFFF; line-height: 1.2; }
+  .wa-check {
+    width: 13px;
+    height: 13px;
+    background: #22C55E;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    font-size: 8.5px;
+    font-weight: 800;
+  }
+  .wa-status { font-size: 10.5px; color: #D1E7DD; line-height: 1.2; }
+  .wa-actions { font-size: 18px; display: flex; gap: 12px; opacity: 0.9; }
+
+  /* Chat Container */
+  .chat-body {
+    flex: 1;
+    padding: 12px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* Inbound Message */
+  .inbound-bubble {
+    background: #FFFFFF;
+    border-radius: 12px;
+    border-top-left-radius: 3px;
+    padding: 10px 10px 8px;
+    max-width: 96%;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  }
+  .inbound-greeting {
+    font-size: 11.5px;
+    line-height: 1.45;
+    color: #1F2937;
+    margin-bottom: 8px;
+  }
+
+  /* In-Chat Product Card */
+  .chat-card {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 7px;
+  }
+  .chat-card-img-wrap {
+    width: 100%;
+    height: 112px;
+    background: #FFFFFF;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: 6px;
+  }
+  .chat-card-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 2px;
+  }
+  .chat-card-title {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #0A1C44;
+  }
+  .chat-card-time {
+    font-size: 9px;
+    color: #94A3B8;
+  }
+  .chat-card-price {
+    font-size: 13px;
+    font-weight: 800;
+    color: #079D4F;
+    margin-bottom: 6px;
+  }
+  .chat-card-btn {
+    width: 100%;
+    padding: 6px 0;
+    background: #FFFFFF;
+    border: 1.2px solid #008069;
+    color: #008069;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  /* Outbound Reply */
+  .outbound-bubble {
+    align-self: flex-end;
+    background: #D9FDD3;
+    border-radius: 12px;
+    border-top-right-radius: 3px;
+    padding: 6px 10px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    display: inline-flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-top: 2px;
+  }
+  .outbound-text {
+    font-size: 11.5px;
+    color: #111827;
+    font-weight: 500;
+  }
+  .outbound-ticks {
+    font-size: 9px;
+    color: #38BDF8;
+    font-weight: 700;
+  }
+
+  /* Bottom Input Bar */
+  .wa-footer {
+    height: 48px;
+    background: #F0F2F5;
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+    gap: 6px;
+  }
+  .wa-input-pill {
+    flex: 1;
+    height: 34px;
+    background: #FFFFFF;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    gap: 6px;
+    font-size: 11px;
+    color: #94A3B8;
+  }
+  .wa-mic-btn {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #008069;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+  }
+  .wa-mic-btn svg { width: 17px; height: 17px; }
+
+  /* Accent Burst Marks at Phone Top-Right */
+  .accent-burst {
+    position: absolute;
+    left: 636px;
+    top: 54px;
+    z-index: 25;
+  }
+  .accent-burst svg {
+    width: 34px;
+    height: 34px;
+    color: #2563EB;
+  }
+
+  /* ================= RIGHT: OUR COLLECTION CARD ================= */
+  .collection-card {
+    position: absolute;
+    left: 642px;
+    top: 96px;
+    width: 384px;
+    background: #FFFFFF;
+    border-radius: 22px;
+    padding: 20px 22px;
+    box-shadow: 0 20px 50px rgba(10, 28, 68, 0.12), 0 4px 14px rgba(10, 28, 68, 0.05);
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    z-index: 24;
+  }
+  .col-title {
+    font-size: 16px;
+    font-weight: 800;
+    color: #0A1C44;
+    letter-spacing: -0.4px;
+    margin-bottom: 12px;
+  }
+  .col-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  .col-tab {
+    padding: 5px 14px;
+    border-radius: 14px;
+    font-size: 11.5px;
+    font-weight: 700;
+    cursor: default;
+  }
+  .col-tab.active {
+    background: #2563EB;
+    color: #FFFFFF;
+  }
+  .col-tab.inactive {
+    background: #F1F5F9;
+    color: #64748B;
+  }
+
+  /* 2x2 Grid */
+  .col-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .col-item {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .col-img-wrap {
+    width: 100%;
+    height: 84px;
+    background: #FFFFFF;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+    overflow: hidden;
+  }
+  .col-prod-name {
+    font-size: 12px;
+    font-weight: 700;
+    color: #1E293B;
+    margin-bottom: 3px;
+  }
+  .col-prod-price {
+    font-size: 12px;
+    font-weight: 800;
+    color: #0A1C44;
+  }
+</style>
+</head>
+<body>
+
+<div class="bg-shape-1"></div>
+<div class="bg-shape-2"></div>
+
+<div class="canvas">
+
+  <!-- ================= LEFT: 4 FEATURE BADGES ================= -->
+  <div class="left-features">
+    <!-- 1. Interactive Catalogues -->
+    <div class="feature-pill pill-1">
+      <div class="pill-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="7" height="7"></rect>
+          <rect x="14" y="3" width="7" height="7"></rect>
+          <rect x="14" y="14" width="7" height="7"></rect>
+          <rect x="3" y="14" width="7" height="7"></rect>
+        </svg>
+      </div>
+      <div class="pill-text">Interactive Catalogues</div>
+    </div>
+
+    <!-- 2. 2-Tap Flows Checkout -->
+    <div class="feature-pill pill-2">
+      <div class="pill-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+        </svg>
+      </div>
+      <div class="pill-text">2-Tap Flows Checkout</div>
+    </div>
+
+    <!-- 3. Automated Order Tracking -->
+    <div class="feature-pill pill-3">
+      <div class="pill-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+          <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+          <line x1="12" y1="22.08" x2="12" y2="12"></line>
+        </svg>
+      </div>
+      <div class="pill-text">Automated Tracking</div>
+    </div>
+
+    <!-- 4. Secure Payments -->
+    <div class="feature-pill pill-4">
+      <div class="pill-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          <polyline points="9 12 11 14 15 10"></polyline>
+        </svg>
+      </div>
+      <div class="pill-text">Secure Payments</div>
+    </div>
+  </div>
+
+  <!-- ================= CENTER: PHONE MOCKUP ================= -->
+  <div class="phone-wrap">
+    <div class="screen">
+      <!-- Status bar -->
+      <div class="status-bar">
+        <span>9:41</span>
+        <div class="notch"></div>
+        <span>5G · 100%</span>
+      </div>
+
+      <!-- WhatsApp Header -->
+      <div class="wa-header">
+        <div class="wa-back">‹</div>
+        <div class="wa-avatar">
+          <!-- Store Icon -->
+          <svg viewBox="0 0 24 24" fill="#008069">
+            <path d="M4 4h16l1 5H3l1-5zm-1 6h18v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-9zm6 3a3 3 0 0 0 6 0h-6z"/>
+          </svg>
+        </div>
+        <div class="wa-info">
+          <div class="wa-name-row">
+            <div class="wa-name">Your Store</div>
+            <div class="wa-check">✓</div>
+          </div>
+          <div class="wa-status">Online</div>
+        </div>
+        <div class="wa-actions">
+          <span>⋮</span>
+        </div>
+      </div>
+
+      <!-- Chat Area -->
+      <div class="chat-body">
+        <!-- Incoming message -->
+        <div class="inbound-bubble">
+          <div class="inbound-greeting">
+            Hi! 🖐<br>
+            Welcome to our store.<br>
+            Here are our latest collections just for you.
+          </div>
+          
+          <!-- In-Chat Product Card -->
+          <div class="chat-card">
+            <div class="chat-card-img-wrap">
+              <!-- High Fidelity Sneaker -->
+              <svg viewBox="0 0 160 85" width="136" height="72">
+                <!-- Sole Cushion Shadow -->
+                <ellipse cx="80" cy="74" rx="65" ry="5" fill="#E2E8F0"/>
+                <!-- Outsole -->
+                <path d="M18,60 C26,60 48,59 75,57 C102,55 130,56 144,57 C148,57 151,60 148,64 C140,71 118,72 80,72 C42,72 24,71 16,68 C13,67 13,60 18,60 Z" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
+                <!-- Midsole Accent -->
+                <path d="M22,60 C32,59 55,57 85,56 C115,55 136,57 143,58 C144,61 138,64 125,65 C95,65 50,65 24,64 C20,64 19,61 22,60 Z" fill="#079D4F"/>
+                <!-- Upper Shoe Body -->
+                <path d="M22,60 C32,58 42,48 50,40 C60,29 78,25 94,27 C104,28 114,34 122,41 C130,48 140,54 143,57 C136,56 112,54 85,55 C55,56 32,58 22,60 Z" fill="#475569"/>
+                <!-- Mesh Side Panel -->
+                <path d="M52,40 C64,41 78,42 92,42 C90,36 84,30 76,27 C65,27 55,32 52,40 Z" fill="#64748B"/>
+                <!-- Brand Accent Swoosh -->
+                <path d="M58,45 C70,46 88,44 110,36 C105,42 90,48 72,48 C64,48 60,46 58,45 Z" fill="#F97316"/>
+                <!-- Collar / Ankle padding -->
+                <path d="M94,27 C102,28 110,33 115,39 L92,42 C91,37 92,30 94,27 Z" fill="#38BDF8"/>
+                <!-- Laces -->
+                <line x1="68" y1="33" x2="80" y2="40" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round"/>
+                <line x1="75" y1="31" x2="87" y2="38" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round"/>
+                <line x1="82" y1="29" x2="94" y2="36" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="chat-card-info">
+              <span class="chat-card-title">Running Shoes</span>
+              <span class="chat-card-time">10:24 AM</span>
+            </div>
+            <div class="chat-card-price">₹ 2,499</div>
+            <div class="chat-card-btn">View Product</div>
+          </div>
+        </div>
+
+        <!-- Outbound reply -->
+        <div class="outbound-bubble">
+          <span class="outbound-text">Show me more options</span>
+          <span class="outbound-ticks">10:25 AM ✓✓</span>
+        </div>
+      </div>
+
+      <!-- Footer Bar -->
+      <div class="wa-footer">
+        <div class="wa-input-pill">
+          <span>Type a message...</span>
+        </div>
+        <div class="wa-mic-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+            <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+            <line x1="12" y1="19" x2="12" y2="23"></line>
+            <line x1="8" y1="23" x2="16" y2="23"></line>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Accent Burst Lines -->
+  <div class="accent-burst">
+    <svg viewBox="0 0 36 36" fill="none">
+      <path d="M8 28 L2 34" stroke="#2563EB" stroke-width="3" stroke-linecap="round"/>
+      <path d="M18 20 L24 10" stroke="#2563EB" stroke-width="3" stroke-linecap="round"/>
+      <path d="M26 26 L34 22" stroke="#2563EB" stroke-width="3" stroke-linecap="round"/>
+    </svg>
+  </div>
+
+  <!-- ================= RIGHT: OUR COLLECTION CARD ================= -->
+  <div class="collection-card">
+    <div class="col-title">Our Collection</div>
+    <div class="col-tabs">
+      <div class="col-tab active">Men</div>
+      <div class="col-tab inactive">Women</div>
+      <div class="col-tab inactive">Kids</div>
+    </div>
+
+    <div class="col-grid">
+      <!-- 1. Sports Shoes -->
+      <div class="col-item">
+        <div class="col-img-wrap">
+          <svg viewBox="0 0 120 65" width="96" height="52">
+            <ellipse cx="60" cy="56" rx="50" ry="4" fill="#F1F5F9"/>
+            <path d="M12,46 C20,46 38,45 60,43 C80,41 100,42 110,43 C113,43 115,45 113,48 C108,53 90,54 60,54 C30,54 18,53 11,51 C9,50 9,46 12,46 Z" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.2"/>
+            <path d="M15,46 C22,45 30,37 38,30 C46,22 60,18 72,20 C80,21 88,26 94,32 C100,37 108,41 110,43 C104,42 85,40 60,41 C38,42 22,44 15,46 Z" fill="#3B82F6"/>
+            <path d="M38,30 C48,31 58,32 70,32 C68,27 63,22 56,20 C48,20 40,24 38,30 Z" fill="#1D4ED8"/>
+            <line x1="52" y1="25" x2="62" y2="31" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round"/>
+            <line x1="58" y1="23" x2="68" y2="29" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="col-prod-name">Sports Shoes</div>
+        <div class="col-prod-price">₹ 2,499</div>
+      </div>
+
+      <!-- 2. Backpacks -->
+      <div class="col-item">
+        <div class="col-img-wrap">
+          <svg viewBox="0 0 70 70" width="56" height="56">
+            <rect x="22" y="10" width="26" height="12" rx="6" fill="#475569" stroke="#1E293B" stroke-width="2"/>
+            <path d="M18,22 C18,17 25,16 35,16 C45,16 52,17 52,22 L54,54 C54,59 47,60 35,60 C23,60 16,59 16,54 Z" fill="#1E293B"/>
+            <path d="M22,34 C22,30 27,29 35,29 C43,29 48,30 48,34 L48,50 C48,53 43,54 35,54 C27,54 22,53 22,50 Z" fill="#334155"/>
+            <line x1="26" y1="40" x2="44" y2="40" stroke="#F8FAFC" stroke-width="1.8" stroke-dasharray="3,2"/>
+          </svg>
+        </div>
+        <div class="col-prod-name">Backpacks</div>
+        <div class="col-prod-price">₹ 1,999</div>
+      </div>
+
+      <!-- 3. T-Shirts -->
+      <div class="col-item">
+        <div class="col-img-wrap">
+          <svg viewBox="0 0 80 70" width="64" height="56">
+            <path d="M28,16 C32,20 48,20 52,16 L68,23 L61,35 L54,30 L54,58 L26,58 L26,30 L19,35 L12,23 Z" fill="#64748B"/>
+            <path d="M28,16 C33,21 47,21 52,16 C50,14 47,13 40,13 C33,13 30,14 28,16 Z" fill="#E2E8F0"/>
+            <path d="M34,28 C34,25 36,24 40,24 C44,24 46,25 46,28 L46,40 C46,42 44,43 40,43 C36,43 34,42 34,40 Z" fill="#475569" opacity="0.4"/>
+          </svg>
+        </div>
+        <div class="col-prod-name">T-Shirts</div>
+        <div class="col-prod-price">₹ 999</div>
+      </div>
+
+      <!-- 4. Accessories -->
+      <div class="col-item">
+        <div class="col-img-wrap">
+          <svg viewBox="0 0 80 70" width="64" height="56">
+            <path d="M30,14 C30,10 34,8 40,8 C46,8 50,10 50,14 L50,20 L30,20 Z" fill="none" stroke="#D97706" stroke-width="3"/>
+            <path d="M22,20 L58,20 L62,54 C62,57 58,58 40,58 C22,58 18,57 18,54 Z" fill="#F59E0B"/>
+            <path d="M20,20 L35,20 L33,48 L19,48 Z" fill="#D97706" opacity="0.3"/>
+            <circle x="40" y="32" r="3" fill="#FFFFFF"/>
+          </svg>
+        </div>
+        <div class="col-prod-name">Accessories</div>
+        <div class="col-prod-price">₹ 799</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

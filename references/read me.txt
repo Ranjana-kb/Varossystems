@@ -1,0 +1,26 @@
+WatsBuy website prototype
+========================
+
+Open index.html in a modern browser to preview the website.
+
+Included:
+- Responsive one-page website prototype
+- Navigation and dropdowns- Navigation with dropdowns — clicking any nav tag or link navigates to its
+  respective section (anchor-based in-page navigation)
+- Website vs. WhatsApp commerce comparison tabs
+- Illustrative funnel
+- Interactive revenue recovery calculator
+- Searchable FAQ with all 58 questions from FAQ.docx
+- Pricing, features, solutions, reseller, enterprise and contact sections
+- Policy page placeholders
+
+Important before publishing:
+1. Replace the CSS text-based logo mark with the official logo asset if exact logo fidelity is required.
+2. Connect the contact form to a secure backend/CRM; this prototype does not transmit submissions.
+3. Verify plan entitlements, prices and company contact details.
+4. Replace policy placeholders with approved legal text.
+5. Configure real application/login destinations.
+6. Demo metrics are illustrative and must not be represented as actual customer results.
+7. Review third-party benchmark citations and current methodology before publishing.
+
+This is a static front-end prototype, not a production-connected SaaS application.

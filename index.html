@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The WhatsApp-Based E-Commerce SaaS Platform — WatsBuy</title>
+  <meta name="description" content="Turn WhatsApp into your complete digital storefront. Showcase catalogues, answer customer queries, and take in-chat orders.">
+  <link rel="icon" type="image/png" href="assets/images/watsbuy-mark.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+  
+</head>
+<body>
+  <!-- Top Announcement -->
+  <div class="announcement">
+    <span><strong>THE WHATSAPP-BASED E-COMMERCE SAAS PLATFORM</strong> · Turn WhatsApp into your digital storefront</span>
+  </div>
+
+  <!-- Shared Header Navigation -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html" aria-label="WatsBuy Home">
+        <img src="references/WatsBuy Logo.jpeg" alt="WatsBuy Logo" class="brand-logo-img">
+        <span class="brand-tagline">Your Store on WhatsApp</span>
+      </a>
+      
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+      
+      <nav class="nav-links" id="navLinks">
+        <a href="why-watsbuy.html" class="">Why WatsBuy?</a>
+        <div class="nav-item">
+          <button type="button" class="">Solutions ▾</button>
+          <div class="dropdown">
+            <a href="solutions.html">All Solutions</a>
+            <a href="solutions.html#retail">Retail &amp; D2C</a>
+            <a href="solutions.html#wholesale">Wholesalers &amp; Distributors</a>
+            <a href="solutions.html#multi-store">Multi-Store Businesses</a>
+            <a href="solutions.html#smb">Growing SMBs</a>
+            <a href="solutions.html#enterprise">Enterprise Scale</a>
+          </div>
+        </div>
+        <a href="pricing.html" class="">Pricing</a>
+        <a href="enterprise.html" class="">Enterprise</a>
+        <a href="reseller.html" class="">Become a Reseller</a>
+        <div class="nav-item">
+          <button type="button" class="">Resources ▾</button>
+          <div class="dropdown">
+            <a href="faq.html">Help Centre</a>
+            <a href="faq.html#faqs">FAQs</a>
+            <a href="getting-started.html">Get Started</a>
+          </div>
+        </div>
+        <a href="signin.html" class="">Sign In</a>
+        <a class="btn btn-primary btn-sm" href="demo.html">Book a Demo →</a>
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- Hero Section -->
+  <section class="page-hero">
+    <div class="container hero-split-grid">
+      <div>
+        <div class="eyebrow"><span class="dot"></span> THE WHATSAPP-BASED E-COMMERCE SAAS PLATFORM</div>
+        <h1 style="font-size:clamp(34px,4.2vw,54px);line-height:1.06;letter-spacing:-2.2px;margin:16px 0 14px;font-weight:850;color:var(--navy);">
+          Transform WhatsApp into a <em class="text-green" style="font-style:normal;">Powerful Digital Storefront</em>
+        </h1>
+        <p style="font-size:16px;line-height:1.65;color:var(--slate);max-width:540px;margin:0 0 20px;">
+          Transform WhatsApp into a powerful digital storefront with WatsBuy, your all-in-one conversational commerce platform. Enable customers to discover products, place orders, make payments, and track purchases—all within WhatsApp. Drive more sales with bulk broadcasting, smart retargeting campaigns, and automated customer engagement.
+        </p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px;">
+          <a class="btn btn-primary" href="trial.html" onclick="openTrialModal('', event)">7 Day Free Trial</a>
+          <a class="btn btn-outline" href="why-watsbuy.html">Why WatsBuy? →</a>
+        </div>
+        <div style="font-size:13px;color:var(--navy);display:flex;align-items:center;gap:16px;flex-wrap:wrap;font-weight:700;">
+          <span><strong class="text-green">✓</strong> <strong>Zero app downloads</strong></span>
+          <span><strong class="text-green">✓</strong> <strong>Direct in-chat checkout</strong></span>
+          <span><strong class="text-green">✓</strong> <strong>Seamless UPI &amp; card payments</strong></span>
+        </div>
+      </div>
+
+      <div style="position:relative;">
+        <div class="workspace-demo-container">
+          <!-- Subtle Animated Floating Commerce Cards -->
+          <div class="floating-commerce-card floating-product-card" aria-hidden="true">
+            <div class="f-card-icon">🛍️</div>
+            <div class="f-card-body">
+              <span class="f-card-title">Live Storefront</span>
+              <span class="f-card-meta">In-Chat Catalogue</span>
+            </div>
+            <span class="f-card-badge">Added to Cart ✓</span>
+          </div>
+
+          <div class="floating-commerce-card floating-order-indicator" aria-hidden="true">
+            <span class="pulse-indicator-dot"></span>
+            <div class="f-card-body">
+              <span class="f-card-title">WhatsApp Order Confirmed</span>
+              <span class="f-card-meta">2-Tap Flows Checkout</span>
+            </div>
+            <span class="f-card-tag">Live ⚡</span>
+          </div>
+
+          <!-- Simulated Cursor Contained Within Illustration -->
+          <div class="simulated-cursor-track" aria-hidden="true">
+            <div class="simulated-cursor">
+              <svg class="cursor-pointer-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.5 3.5L11.5 21L14.8 14.2L21.5 11L4.5 3.5Z" fill="#0A1C44" stroke="#FFFFFF" stroke-width="1.75" stroke-linejoin="round"/>
+              </svg>
+              <span class="cursor-ripple"></span>
+              <span class="cursor-label">Merchant Demo</span>
+            </div>
+          </div>
+
+          <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:12px;">
+            <div style="font-weight:800;font-size:13.5px;display:flex;align-items:center;gap:8px;">
+              <span>🛍️</span> <span>WatsBuy Live Merchant Workspace</span>
+            </div>
+            <span style="font-size:10px;color:var(--green);background:var(--mint);padding:3px 8px;border-radius:20px;font-weight:750;">● DEMO PREVIEW</span>
+          </div>
+
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px;">
+            <div style="background:var(--grey-bg);border:1px solid var(--line);border-radius:12px;padding:10px;">
+              <small style="display:block;font-size:9.5px;color:var(--slate);font-weight:600;text-transform:uppercase;">Demo Orders</small>
+              <strong style="display:block;font-size:19px;letter-spacing:-0.8px;margin:3px 0 1px;">248</strong>
+              <span style="font-size:9.5px;color:var(--green);font-weight:700;">Sample data</span>
+            </div>
+            <div style="background:var(--grey-bg);border:1px solid var(--line);border-radius:12px;padding:10px;">
+              <small style="display:block;font-size:9.5px;color:var(--slate);font-weight:600;text-transform:uppercase;">Illustrative Sales</small>
+              <strong style="display:block;font-size:19px;letter-spacing:-0.8px;margin:3px 0 1px;">₹3.7L</strong>
+              <span style="font-size:9.5px;color:var(--green);font-weight:700;">Modelled</span>
+            </div>
+            <div style="background:var(--grey-bg);border:1px solid var(--line);border-radius:12px;padding:10px;">
+              <small style="display:block;font-size:9.5px;color:var(--slate);font-weight:600;text-transform:uppercase;">Avg. Order</small>
+              <strong style="display:block;font-size:19px;letter-spacing:-0.8px;margin:3px 0 1px;">₹1.5k</strong>
+              <span style="font-size:9.5px;color:var(--green);font-weight:700;">Average</span>
+            </div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr 0.95fr;gap:12px;">
+            <div style="border:1px solid var(--line);border-radius:12px;padding:12px;background:#fff;">
+              <div style="font-size:11px;font-weight:800;display:flex;justify-content:space-between;">
+                <span>In-Chat Conversions</span> <span style="color:#81908c;font-weight:normal">Hourly demo</span>
+              </div>
+              <div style="height:80px;display:flex;align-items:flex-end;gap:5px;padding-top:10px;">
+                <div style="flex:1;background:linear-gradient(180deg,#16B04B,#CFE8D9);height:35%;border-radius:3px;"></div>
+                <div style="flex:1;background:linear-gradient(180deg,#16B04B,#CFE8D9);height:50%;border-radius:3px;"></div>
+                <div style="flex:1;background:linear-gradient(180deg,#16B04B,#CFE8D9);height:42%;border-radius:3px;"></div>
+                <div style="flex:1;background:linear-gradient(180deg,#16B04B,#CFE8D9);height:70%;border-radius:3px;"></div>
+                <div style="flex:1;background:linear-gradient(180deg,#16B04B,#CFE8D9);height:58%;border-radius:3px;"></div>
+                <div style="flex:1;background:linear-gradient(180deg,#16B04B,#CFE8D9);height:85%;border-radius:3px;"></div>
+                <div style="flex:1;background:linear-gradient(180deg,#16B04B,#CFE8D9);height:75%;border-radius:3px;"></div>
+                <div style="flex:1;background:linear-gradient(180deg,#16B04B,#CFE8D9);height:96%;border-radius:3px;"></div>
+              </div>
+            </div>
+
+            <div style="border:1px solid var(--line);border-radius:12px;padding:12px;background:#fff;">
+              <div style="font-size:11px;font-weight:800;margin-bottom:8px;">Recent Live Events</div>
+              <div style="display:flex;align-items:center;gap:8px;font-size:11px;margin-bottom:6px;color:#536271;">
+                <div style="width:22px;height:22px;border-radius:6px;background:var(--mint);color:var(--green);display:grid;place-items:center;font-size:10px;flex-shrink:0;">✓</div>
+                <div><strong>Order confirmed</strong><div style="font-size:9.5px;color:#8090a0">WhatsApp Flow cart · just now</div></div>
+              </div>
+              <div style="display:flex;align-items:center;gap:8px;font-size:11px;margin-bottom:6px;color:#536271;">
+                <div style="width:22px;height:22px;border-radius:6px;background:var(--mint);color:var(--green);display:grid;place-items:center;font-size:10px;flex-shrink:0;">✦</div>
+                <div><strong>Customer viewed catalogue</strong><div style="font-size:9.5px;color:#8090a0">Variant inquiry · 2m ago</div></div>
+              </div>
+              <div style="display:flex;align-items:center;gap:8px;font-size:11px;color:#536271;">
+                <div style="width:22px;height:22px;border-radius:6px;background:var(--mint);color:var(--green);display:grid;place-items:center;font-size:10px;flex-shrink:0;">↻</div>
+                <div><strong>Cart recovery nudged</strong><div style="font-size:9.5px;color:#8090a0">Automated flow · 5m ago</div></div>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:10px;font-size:10px;color:var(--slate);text-align:right;">
+            ILLUSTRATIVE PREVIEW · WORKSPACE DEMONSTRATION
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Market Shift (50M Reference) -->
+  <section class="section section-soft" id="market-shift">
+    <div class="container">
+      <div class="section-head" style="margin-bottom:28px;">
+        <span class="section-kicker">Market Shift</span>
+        <h2>Your Customers Are Already on WhatsApp</h2>
+        <p>Reach shoppers, share your catalogue, and take orders in the app they already use.</p>
+      </div>
+
+      <div class="market-shift-grid">
+        <div class="market-shift-card">
+          <div class="market-shift-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+          </div>
+          <div class="market-shift-val">3B+</div>
+          <div class="market-shift-desc">Monthly active WhatsApp users worldwide</div>
+        </div>
+
+        <div class="market-shift-card">
+          <div class="market-shift-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </div>
+          <div class="market-shift-val">2B+</div>
+          <div class="market-shift-desc">People use WhatsApp every day</div>
+        </div>
+
+        <div class="market-shift-card">
+          <div class="market-shift-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+          </div>
+          <div class="market-shift-val">1.5B</div>
+          <div class="market-shift-desc">Daily users of WhatsApp Updates</div>
+        </div>
+
+        <div class="market-shift-card">
+          <div class="market-shift-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path><circle cx="8" cy="10" r="1" fill="currentColor"></circle><circle cx="12" cy="10" r="1" fill="currentColor"></circle><circle cx="16" cy="10" r="1" fill="currentColor"></circle></svg>
+          </div>
+          <div class="market-shift-val">175M+</div>
+          <div class="market-shift-desc">People messaged a WhatsApp Business account daily</div>
+        </div>
+      </div>
+
+      <div class="market-shift-banner">
+        <div class="market-shift-banner-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+        </div>
+        <div class="market-shift-banner-text">
+          Bring your storefront, offers, orders, and customer support to WhatsApp with WatsBuy.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The 5-Step WhatsApp Commerce Experience (Customer Journey) -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-kicker">END-TO-END CUSTOMER JOURNEY</span>
+        <h2>The 5-Step WhatsApp Commerce Experience.</h2>
+        <p>From customer engagement to repeat purchases—WatsBuy simplifies the entire shopping journey within WhatsApp.</p>
+      </div>
+
+      <div class="flow-track-5">
+        <div class="flow-step-card">
+          <div class="flow-num-badge">01</div>
+          <h4>Broadcast &amp; Engage</h4>
+          <p>Reach opted-in customers through targeted bulk broadcasts, promotional offers, and Meta-approved WhatsApp message templates.</p>
+        </div>
+        <div class="flow-step-card">
+          <div class="flow-num-badge">02</div>
+          <h4>Discover &amp; Explore</h4>
+          <p>Customers browse interactive product catalogues, explore categories, view product details, and select their preferred items directly within WhatsApp.</p>
+        </div>
+        <div class="flow-step-card">
+          <div class="flow-num-badge">03</div>
+          <h4>Cart &amp; Checkout</h4>
+          <p>Simplify purchasing with WhatsApp Flows, enabling customers to review their cart, select product variants, and confirm delivery details without switching applications.</p>
+        </div>
+        <div class="flow-step-card">
+          <div class="flow-num-badge">04</div>
+          <h4>Payment &amp; Order Tracking</h4>
+          <p>Accept payments through supported UPI, credit/debit cards, net banking, or Cash on Delivery. Provide automated order confirmations, status updates, and delivery notifications.</p>
+        </div>
+        <div class="flow-step-card">
+          <div class="flow-num-badge">05</div>
+          <h4>One WhatsApp Number</h4>
+          <p>No need to revisit a website or download an app. Customers simply send “Hi” to explore products, access My Account, discover offers, track orders, get support, or contact your team.</p>
+        </div>
+      </div>
+
+      <!-- 3 Product Suites -->
+      <div class="cards-grid-3" style="margin-top:32px;">
+        <div class="feature-box">
+          <div class="box-icon">🛍️</div>
+          <h3>1. WhatsApp Storefront &amp; Catalogue Suite</h3>
+          <p>Transform your business WhatsApp number into a 24/7 digital storefront. Let customers explore products, browse categories, select variants, view offers, and access My Account—all within a single WhatsApp conversation, without visiting a website or installing an app.</p>
+        </div>
+        <div class="feature-box">
+          <div class="box-icon">💳</div>
+          <h3>2. Checkout, Payments &amp; Order Management Suite</h3>
+          <p>Simplify shopping with interactive WhatsApp Flows for cart review, address confirmation, and order placement. Accept payments through supported Indian and international payment gateways, manage orders centrally, and keep customers informed with automated order updates.</p>
+        </div>
+        <div class="feature-box">
+          <div class="box-icon">📈</div>
+          <h3>3. Marketing, Retargeting &amp; Customer Engagement Suite</h3>
+          <p>Reach customers directly through Meta-approved bulk broadcasts, targeted promotional campaigns, and abandoned-cart recovery. Build lasting customer relationships with personalized offers, automated notifications, order tracking, and integrated customer support—all through one WhatsApp number.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- The 8 Core Pillars of WatsBuy -->
+  <section class="section section-soft">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-kicker">One Platform. One WhatsApp Number. Complete Commerce.</span>
+        <h2>The 8 Core Pillars of WatsBuy.</h2>
+        <p>WatsBuy brings together everything businesses need to sell, manage orders, engage customers, and drive repeat purchases—all through WhatsApp, without requiring customers to visit a website or download an app.</p>
+      </div>
+
+      <div class="cards-grid-4">
+        <div class="feature-box">
+          <div class="box-icon">01</div>
+          <h3>WhatsApp Digital Storefront</h3>
+          <p>Transform your business WhatsApp number into a 24/7 interactive shopping destination. Customers can explore product categories, browse catalogues, view product details, and discover offers directly within WhatsApp.</p>
+        </div>
+        <div class="feature-box">
+          <div class="box-icon">02</div>
+          <h3>Catalogue &amp; Order Management</h3>
+          <p>Manage products, pricing, variants, inventory, and customer orders from one centralized dashboard. Track order status, manage fulfilment, and send automated order notifications.</p>
+        </div>
+        <div class="feature-box">
+          <div class="box-icon">03</div>
+          <h3>Payments &amp; Checkout</h3>
+          <p>Enable convenient purchasing through integrated payment gateways supporting UPI, credit/debit cards, net banking, and Cash on Delivery, subject to merchant and gateway availability.</p>
+        </div>
+        <div class="feature-box">
+          <div class="box-icon">04</div>
+          <h3>WhatsApp Flows &amp; Automation</h3>
+          <p>Simplify customer interactions with Meta WhatsApp Flows and automated workflows for product selection, checkout, delivery details, order enquiries, and customer service.</p>
+        </div>
+        <div class="feature-box">
+          <div class="box-icon">05</div>
+          <h3>Bulk Broadcasting &amp; Campaigns</h3>
+          <p>Reach opted-in customers through Meta-approved WhatsApp templates, promotional broadcasts, new arrivals, seasonal offers, and targeted marketing campaigns.</p>
+        </div>
+        <div class="feature-box">
+          <div class="box-icon">06</div>
+          <h3>My Account &amp; Customer Self-Service</h3>
+          <p>Let customers simply send "Hi" to access My Account, explore products, view offers, track orders, request support, or contact your business—all through the same WhatsApp number.</p>
+        </div>
+        <div class="feature-box">
+          <div class="box-icon">07</div>
+          <h3>Customer Support &amp; Engagement</h3>
+          <p>Manage customer enquiries, complaints, returns, and service requests through a centralized customer support dashboard, with conversation history and team collaboration.</p>
+        </div>
+        <div class="feature-box">
+          <div class="box-icon">08</div>
+          <h3>Retargeting &amp; Cart Recovery</h3>
+          <p>Reconnect with potential buyers through abandoned-cart reminders, personalized promotions, customer segmentation, and targeted retargeting campaigns to encourage repeat purchases.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- 7-Day Free Trial Modal (Opens trial registration form, hidden on initial load) -->
+  <div class="trial-modal" id="trialModal" role="dialog" aria-modal="true" aria-labelledby="trialModalTitle" onclick="handleTrialBackdropClick(event)">
+    <div class="trial-modal-dialog">
+      <div class="trial-modal-header">
+        <div>
+          <div class="eyebrow" style="margin-bottom:6px;"><span class="dot"></span> 7-DAY FREE TRIAL · INSTANT SETUP</div>
+          <h3 id="trialModalTitle" style="font-size:24px;font-weight:850;color:var(--navy);letter-spacing:-0.8px;margin:0 0 4px;">
+            Start Your 7-Day Free Trial
+          </h3>
+          <p style="font-size:13.5px;color:var(--slate);margin:0;line-height:1.5;">
+            Enter your business details below to activate your 7-day free trial. Full access, zero commitment.
+          </p>
+        </div>
+        <button type="button" class="trial-modal-close" onclick="closeTrialModal()" aria-label="Close dialog">&times;</button>
+      </div>
+
+      <form id="trialForm" onsubmit="handleTrialSubmit(event)">
+        <div class="form-grid">
+          <div class="field">
+            <label for="trialName">Full Name *</label>
+            <input id="trialName" name="trialName" type="text" required placeholder="Full Name">
+          </div>
+          <div class="field">
+            <label for="trialEmail">Business Email *</label>
+            <input id="trialEmail" name="trialEmail" type="email" required placeholder="Work Email Address">
+          </div>
+          <div class="field">
+            <label for="trialPhone">WhatsApp Number *</label>
+            <input id="trialPhone" name="trialPhone" type="tel" required placeholder="WhatsApp Phone Number">
+          </div>
+          <div class="field">
+            <label for="trialCompany">Company / Business Name *</label>
+            <input id="trialCompany" name="trialCompany" type="text" required placeholder="Company / Business Name">
+          </div>
+          <div class="field">
+            <label for="trialOrderVolume">Monthly Orders *</label>
+            <select id="trialOrderVolume" name="trialOrderVolume" required>
+              <option value="">Select Monthly Orders *</option>
+              <option value="Under 500">Under 500 orders / month</option>
+              <option value="500 - 2,000">500 – 2,000 orders / month</option>
+              <option value="2,000 - 10,000">2,000 – 10,000 orders / month</option>
+              <option value="10,000+">10,000+ orders / month (Enterprise)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="trialInterest">Area of Interest *</label>
+            <select id="trialInterest" name="trialInterest" required>
+              <option value="">Select Area of Interest *</option>
+              <option value="Basic Plan">Basic Plan</option>
+              <option value="Growth Plan">Growth Plan</option>
+              <option value="Premium Plan">Premium Plan</option>
+              <option value="Retail & D2C Brands">Retail &amp; D2C Brands</option>
+              <option value="Wholesalers & Distributors">Wholesalers &amp; Distributors</option>
+              <option value="Enterprise Custom Plan">Enterprise Custom Plan</option>
+              <option value="Become a Reseller">Become a Reseller</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="trialCountry">Country *</label>
+            <select id="trialCountry" name="trialCountry" required>
+              <option value="">Select your country *</option>
+              <option value="India">India</option>
+              <option value="United Arab Emirates">United Arab Emirates</option>
+              <option value="Saudi Arabia">Saudi Arabia</option>
+              <option value="United States">United States</option>
+              <option value="United Kingdom">United Kingdom</option>
+              <option value="Singapore">Singapore</option>
+              <option value="Australia">Australia</option>
+              <option value="Canada">Canada</option>
+              <option value="Germany">Germany</option>
+              <option value="France">France</option>
+              <option value="Qatar">Qatar</option>
+              <option value="Oman">Oman</option>
+              <option value="Kuwait">Kuwait</option>
+              <option value="Bahrain">Bahrain</option>
+              <option value="Malaysia">Malaysia</option>
+              <option value="Indonesia">Indonesia</option>
+              <option value="Philippines">Philippines</option>
+              <option value="South Africa">South Africa</option>
+              <option value="Nigeria">Nigeria</option>
+              <option value="Kenya">Kenya</option>
+              <option value="Egypt">Egypt</option>
+              <option value="Brazil">Brazil</option>
+              <option value="Mexico">Mexico</option>
+              <option value="Netherlands">Netherlands</option>
+              <option value="Spain">Spain</option>
+              <option value="Italy">Italy</option>
+              <option value="Switzerland">Switzerland</option>
+              <option value="Ireland">Ireland</option>
+              <option value="New Zealand">New Zealand</option>
+              <option value="Japan">Japan</option>
+              <option value="South Korea">South Korea</option>
+              <option value="Vietnam">Vietnam</option>
+              <option value="Thailand">Thailand</option>
+              <option value="Bangladesh">Bangladesh</option>
+              <option value="Sri Lanka">Sri Lanka</option>
+              <option value="Pakistan">Pakistan</option>
+              <option value="Nepal">Nepal</option>
+              <option value="Other">Other Country</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="trialAddress">Business Address *</label>
+            <input id="trialAddress" name="trialAddress" type="text" required placeholder="Office / Business Address, City, Region">
+          </div>
+          <div class="field full">
+            <label for="trialMessage">Notes &amp; Requirements</label>
+            <textarea id="trialMessage" name="trialMessage" rows="2" placeholder="Tell us about your product catalogue, sales channels, or specific requirements..."></textarea>
+          </div>
+        </div>
+
+        <div style="margin-top:20px;">
+          <button type="submit" class="btn btn-primary btn-block" style="padding:13px 24px;font-size:14.5px;font-weight:750;">
+            Start 7-Day Free Trial →
+          </button>
+        </div>
+
+        <div class="form-status" id="trialStatus">
+          ✓ <strong>7-Day Free Trial request received!</strong> We've received your business details. Our onboarding team will configure your trial environment and send your WhatsApp storefront credentials shortly.
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Shared Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo-badge">
+            <img src="references/WatsBuy Logo.jpeg" alt="WatsBuy Logo" class="footer-logo-img">
+            <span class="footer-tagline">Your Store on WhatsApp</span>
+          </div>
+        </div>
+
+        <div>
+          <h4>Solutions</h4>
+          <a href="solutions.html#retail">Retail &amp; D2C</a>
+          <a href="solutions.html#wholesale">Wholesalers &amp; Distributors</a>
+          <a href="solutions.html#multi-store">Multi-Store Businesses</a>
+          <a href="solutions.html#smb">Growing SMBs</a>
+          <a href="solutions.html#enterprise">Enterprise Scale</a>
+        </div>
+
+        <div>
+          <h4>Platform</h4>
+          <a href="why-watsbuy.html">Why WatsBuy?</a>
+          <a href="pricing.html">Pricing Plans</a>
+          <a href="enterprise.html">Enterprise Workflows</a>
+          <a href="reseller.html">Become a Reseller</a>
+          <a href="getting-started.html">Get Started</a>
+          <a href="faq.html">Help Centre &amp; FAQs</a>
+        </div>
+
+        <div>
+          <h4>Company &amp; Contact</h4>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact Us</a>
+          <a href="demo.html">Book a Demo</a>
+        </div>
+
+        <div>
+          <h4>Policies &amp; Legal</h4>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="refund.html">Refund Policy</a>
+          <a href="shipping.html">Shipping Policy</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; <span id="year"></span> WatsBuy. All rights reserved.
+        </div>
+        <div class="footer-bottom-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="refund.html">Refund Policy</a>
+          <a href="shipping.html">Shipping Policy</a>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Form Submission Confirmation Popup Modal -->
+  <div class="confirmation-modal" id="confirmationModal" role="dialog" aria-modal="true" aria-labelledby="confirmationModalTitle" onclick="handleConfirmationBackdropClick(event)">
+    <div class="confirmation-dialog">
+      <button type="button" class="confirmation-close" onclick="closeConfirmationModal()" aria-label="Close confirmation">&times;</button>
+      <div class="confirmation-icon-wrap">
+        <span class="confirmation-check">✓</span>
+      </div>
+      <div class="confirmation-badge" id="confirmationBadge">SUBMISSION CONFIRMED</div>
+      <h3 class="confirmation-title" id="confirmationModalTitle">Thank You!</h3>
+      <p class="confirmation-message" id="confirmationModalMessage">
+        Your enquiry has been successfully received. Our team will review your details and contact you shortly.
+      </p>
+      <div class="confirmation-actions">
+        <button type="button" class="btn btn-primary" onclick="closeConfirmationModal()" style="min-width:140px;padding:11px 24px;">
+          Done
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Shared Scripts -->
+  <script>
+    // Mobile navigation toggle & auto-close
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    function closeMobileMenu() {
+      if (navLinks) {
+        navLinks.classList.remove('open');
+        if (menuToggle) {
+          menuToggle.setAttribute('aria-expanded', 'false');
+          menuToggle.textContent = '☰';
+        }
+      }
+    }
+
+    function toggleMobileMenu() {
+      if (navLinks && menuToggle) {
+        const isOpen = navLinks.classList.toggle('open');
+        menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        menuToggle.textContent = isOpen ? '✕' : '☰';
+      }
+    }
+
+    if (menuToggle) {
+      menuToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleMobileMenu();
+      });
+    }
+
+    if (navLinks) {
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          closeMobileMenu();
+        });
+      });
+    }
+
+    document.addEventListener('click', (e) => {
+      if (navLinks && menuToggle && !navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+        closeMobileMenu();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeMobileMenu();
+      }
+    });
+
+    // Dynamic current year
+    const yr = document.getElementById('year');
+    if (yr) yr.textContent = new Date().getFullYear();
+
+    // Form Submission Confirmation Modal Handlers
+    function showConfirmationModal(title, message, badgeText) {
+      const modal = document.getElementById('confirmationModal');
+      if (!modal) return;
+      if (title) document.getElementById('confirmationModalTitle').textContent = title;
+      if (message) document.getElementById('confirmationModalMessage').innerHTML = message;
+      if (badgeText) document.getElementById('confirmationBadge').textContent = badgeText;
+      modal.classList.add('open');
+      modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeConfirmationModal() {
+      const modal = document.getElementById('confirmationModal');
+      if (!modal) return;
+      modal.classList.remove('open');
+      modal.style.display = 'none';
+      document.body.style.overflow = '';
+    }
+
+    function handleConfirmationBackdropClick(e) {
+      if (e.target.id === 'confirmationModal') {
+        closeConfirmationModal();
+      }
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeConfirmationModal();
+      }
+    });
+  </script>
+
+  <script>
+    function openTrialModal(planInterest, e) {
+      if (e && e.preventDefault) e.preventDefault();
+      const modal = document.getElementById('trialModal');
+      if (!modal) return;
+      modal.classList.add('open');
+      modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+      if (planInterest) {
+        const select = document.getElementById('trialInterest');
+        if (select) {
+          for (let i = 0; i < select.options.length; i++) {
+            if (select.options[i].value.toLowerCase().includes(planInterest.toLowerCase()) ||
+                select.options[i].text.toLowerCase().includes(planInterest.toLowerCase())) {
+              select.selectedIndex = i;
+              break;
+            }
+          }
+        }
+      }
+      const nameInput = document.getElementById('trialName');
+      if (nameInput) setTimeout(() => nameInput.focus(), 100);
+    }
+
+    function closeTrialModal() {
+      const modal = document.getElementById('trialModal');
+      if (!modal) return;
+      modal.classList.remove('open');
+      modal.style.display = 'none';
+      document.body.style.overflow = '';
+    }
+
+    function handleTrialBackdropClick(e) {
+      if (e.target.id === 'trialModal') {
+        closeTrialModal();
+      }
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeTrialModal();
+      }
+    });
+
+    (function initTrialParams() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const planParam = urlParams.get('plan') || urlParams.get('interest');
+      if (planParam) {
+        const select = document.getElementById('trialInterest');
+        if (select) {
+          for (let i = 0; i < select.options.length; i++) {
+            if (select.options[i].value.toLowerCase().includes(planParam.toLowerCase()) ||
+                select.options[i].text.toLowerCase().includes(planParam.toLowerCase())) {
+              select.selectedIndex = i;
+              break;
+            }
+          }
+        }
+      }
+      if (window.location.hash === '#openTrial' || window.location.hash === '#trialModal') {
+        window.addEventListener('DOMContentLoaded', () => openTrialModal());
+      }
+    })();
+
+    function handleTrialSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('trialName');
+      const email = document.getElementById('trialEmail');
+      const phone = document.getElementById('trialPhone');
+      const company = document.getElementById('trialCompany');
+      const volume = document.getElementById('trialOrderVolume');
+      const interest = document.getElementById('trialInterest');
+      const country = document.getElementById('trialCountry');
+      const address = document.getElementById('trialAddress');
+
+      if (name && !name.value.trim()) { name.focus(); return; }
+      if (email && !email.value.trim()) { email.focus(); return; }
+      if (phone && !phone.value.trim()) { phone.focus(); return; }
+      if (company && !company.value.trim()) { company.focus(); return; }
+      if (volume && !volume.value.trim()) { volume.focus(); return; }
+      if (interest && !interest.value.trim()) { interest.focus(); return; }
+      if (country && !country.value.trim()) { country.focus(); return; }
+      if (address && !address.value.trim()) { address.focus(); return; }
+
+      const status = document.getElementById('trialStatus');
+      if (status) {
+        status.style.display = 'block';
+        status.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+      closeTrialModal();
+      if (typeof showConfirmationModal === 'function') {
+        showConfirmationModal(
+          '7-Day Free Trial Activated!',
+          'Thank you for signing up for the WatsBuy 7-Day Free Trial. Your business details have been received, and our onboarding team is setting up your WhatsApp storefront environment. You will receive your login credentials and setup guide shortly.',
+          'TRIAL ACTIVATED'
+        );
+      }
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,617 @@
+{
+  "categories": [
+    {
+      "name": "Getting Started",
+      "description": "Start here to set up your account and launch your store.",
+      "icon": "rocket"
+    },
+    {
+      "name": "Meta Integration & Verification",
+      "description": "Connect business assets, review permissions and complete verification.",
+      "icon": "shield"
+    },
+    {
+      "name": "WhatsApp Business API & Messaging",
+      "description": "Manage your phone number, templates and customer messaging.",
+      "icon": "chat"
+    },
+    {
+      "name": "Meta Payments & Messaging Billing",
+      "description": "Understand Meta messaging charges and billing arrangements.",
+      "icon": "credit"
+    },
+    {
+      "name": "Payment Gateway Integration",
+      "description": "Configure customer checkout, test payments and troubleshoot transactions.",
+      "icon": "wallet"
+    },
+    {
+      "name": "Catalogue & Store Management",
+      "description": "Manage products, inventory, images and storefront settings.",
+      "icon": "store"
+    },
+    {
+      "name": "AI Shopping Assistant",
+      "description": "Configure AI-powered product discovery and customer conversations.",
+      "icon": "spark"
+    },
+    {
+      "name": "Campaigns & Broadcasts",
+      "description": "Plan compliant campaigns and understand messaging performance.",
+      "icon": "send"
+    },
+    {
+      "name": "Orders & Fulfilment",
+      "description": "Manage order status, shipping, cancellations and returns.",
+      "icon": "box"
+    },
+    {
+      "name": "Analytics & Integrations",
+      "description": "Understand reports, conversions and connected services.",
+      "icon": "chart"
+    },
+    {
+      "name": "Account, Security & Privacy",
+      "description": "Manage access and protect your business information.",
+      "icon": "lock"
+    },
+    {
+      "name": "Troubleshooting Centre",
+      "description": "Find common fixes and learn how to contact support.",
+      "icon": "wrench"
+    }
+  ],
+  "articles": [
+    {
+      "id": "getting-started",
+      "category": "Getting Started",
+      "title": "Launch your WatsBuy store",
+      "summary": "A practical checklist to take your store from setup to launch.",
+      "updated": "29 Oct 2026",
+      "popular": true,
+      "readTime": "5 min",
+      "content": [
+        [
+          "Before you begin",
+          [
+            "Create your WatsBuy merchant account and confirm you can access the dashboard.",
+            "Prepare your business details, product catalogue, customer-support contact and payment-provider account where applicable."
+          ]
+        ],
+        [
+          "Launch checklist",
+          [
+            "Complete your business profile and store settings.",
+            "Connect Meta and WhatsApp using the connection flow available in your WatsBuy dashboard.",
+            "Review message templates and messaging permissions where required.",
+            "Upload products, images, prices and inventory.",
+            "Connect a supported payment gateway if you accept online payments.",
+            "Place a test order and verify order updates and notifications.",
+            "Review your storefront on mobile and desktop before sharing it with customers."
+          ]
+        ],
+        [
+          "Good to know",
+          [
+            "Menu names and available features depend on your live WatsBuy configuration and subscription.",
+            "Do not mark onboarding steps complete until the corresponding action has actually succeeded."
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "meta-connect",
+      "category": "Meta Integration & Verification",
+      "title": "Connect Meta Business to WatsBuy",
+      "summary": "Authorize the correct Meta business assets and confirm the connection status.",
+      "updated": "29 Oct 2026",
+      "popular": true,
+      "readTime": "6 min",
+      "content": [
+        [
+          "Prerequisites",
+          [
+            "A Meta account with access to the relevant business.",
+            "A Meta Business Portfolio and administrator permissions, where required.",
+            "Access to the business phone number and any verification method requested by Meta.",
+            "Legal business details and supporting documents, if requested."
+          ]
+        ],
+        [
+          "Steps",
+          [
+            "Sign in to your WatsBuy merchant dashboard.",
+            "Open Settings → Integrations → Meta & WhatsApp (confirm the menu name in your live product).",
+            "Select Connect with Meta to start the supported Meta authorization or onboarding flow.",
+            "Sign in to Meta and select the correct business assets offered in the flow.",
+            "Review and authorize the permissions required for the WatsBuy integration.",
+            "Complete any verification, phone verification or review steps requested by Meta.",
+            "Return to WatsBuy and check the displayed connection status.",
+            "Run the connection test provided by WatsBuy, if available."
+          ]
+        ],
+        [
+          "Possible statuses",
+          [
+            "Connected",
+            "Verification required",
+            "Action required",
+            "Connection failed"
+          ]
+        ],
+        [
+          "Important",
+          [
+            "Connecting an account does not automatically enable every feature. Verification, phone registration, template approval, permissions and billing may have separate requirements.",
+            "Use only the onboarding method implemented by WatsBuy. Do not assume every account uses the same Meta flow."
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "meta-verification",
+      "category": "Meta Integration & Verification",
+      "title": "Complete Meta Business Verification",
+      "summary": "Understand the information and steps that may be requested by Meta.",
+      "updated": "29 Oct 2026",
+      "popular": true,
+      "readTime": "4 min",
+      "content": [
+        [
+          "Before starting",
+          [
+            "Select the correct Meta Business Portfolio.",
+            "Have accurate legal business details and supporting documents available, if requested.",
+            "Make sure you have the permissions needed to manage the business."
+          ]
+        ],
+        [
+          "Steps",
+          [
+            "Open the relevant business settings in Meta.",
+            "Locate the business verification area if it is available for your business.",
+            "Review the information requested by Meta.",
+            "Enter business details accurately and consistently with official records.",
+            "Submit the supporting documentation requested by Meta.",
+            "Complete any additional checks shown in the Meta interface.",
+            "Check the verification status and respond to any further requests."
+          ]
+        ],
+        [
+          "If verification is delayed or rejected",
+          [
+            "Read the reason provided by Meta.",
+            "Check for mismatched business names, addresses or document details.",
+            "Submit corrected information through Meta's official process.",
+            "Contact WatsBuy support if your account connection or dashboard status appears inconsistent."
+          ]
+        ],
+        [
+          "Important",
+          [
+            "Meta controls eligibility, approval decisions and review timelines. WatsBuy cannot guarantee approval by a fixed date."
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "meta-billing",
+      "category": "Meta Payments & Messaging Billing",
+      "title": "Understand Meta, WatsBuy and customer payment charges",
+      "summary": "Learn the difference between software subscriptions, WhatsApp messaging charges and customer checkout payments.",
+      "updated": "29 Oct 2026",
+      "popular": true,
+      "readTime": "4 min",
+      "content": [
+        [
+          "Three separate payment types",
+          [
+            "WatsBuy subscription: payment for access to WatsBuy software and the features included in your plan.",
+            "Meta WhatsApp charges: applicable messaging usage or related services. Billing may be handled directly by Meta or through a solution provider, depending on the arrangement.",
+            "Customer order payments: payments shoppers make for your products. These are processed by your configured payment gateway or supported payment method."
+          ]
+        ],
+        [
+          "Why this matters",
+          [
+            "Paying a WatsBuy subscription does not necessarily cover Meta messaging charges or payment gateway fees.",
+            "Your Meta billing options depend on the account configuration and whether billing is direct or provider-managed."
+          ]
+        ],
+        [
+          "Next steps",
+          [
+            "Check the billing arrangement for your WhatsApp Business Account.",
+            "If Meta directly bills your account and requires a payment method, follow the options displayed in Meta.",
+            "If a solution provider manages billing, follow that provider's instructions instead.",
+            "Review official pricing information before estimating message costs."
+          ]
+        ],
+        [
+          "Important",
+          [
+            "Meta pricing, free allowances, billing options and policy rules can change. Do not rely on hardcoded rates in this guide; consult the current official Meta documentation."
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "meta-payment-setup",
+      "category": "Meta Payments & Messaging Billing",
+      "title": "Set up or troubleshoot Meta billing",
+      "summary": "Find the right billing steps for your WhatsApp Business Platform account.",
+      "updated": "29 Oct 2026",
+      "popular": false,
+      "readTime": "5 min",
+      "content": [
+        [
+          "First identify your billing arrangement",
+          [
+            "Determine whether the account is billed directly by Meta, through a solution provider, or under another supported arrangement.",
+            "Not every merchant sees the same billing menu or payment options."
+          ]
+        ],
+        [
+          "Steps",
+          [
+            "Sign in to Meta Business and select the relevant business.",
+            "Open the WhatsApp Business Account associated with your integration.",
+            "Locate the billing or payment settings available for that account.",
+            "If directly billed and a payment method is required, follow Meta's current instructions to add or update it.",
+            "Check for outstanding billing actions, failed payments or account restrictions.",
+            "Test messaging using the supported WatsBuy workflow and review any remaining errors."
+          ]
+        ],
+        [
+          "Common issues",
+          [
+            "Payment method rejected: check the error and confirm the method is supported.",
+            "Messaging blocked by billing: review the relevant Meta or provider billing account.",
+            "Billing page unavailable: confirm your permissions and billing arrangement.",
+            "Unexpected charges: review usage, message categories, current rates and the billing statement."
+          ]
+        ],
+        [
+          "Important",
+          [
+            "Do not share payment-card details, passwords or API secrets with support. WatsBuy should publish the exact billing instructions that match its actual integration."
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "whatsapp-number",
+      "category": "WhatsApp Business API & Messaging",
+      "title": "Connect a WhatsApp Business phone number",
+      "summary": "Understand the setup options for a new number or an existing WhatsApp Business number.",
+      "updated": "29 Oct 2026",
+      "popular": true,
+      "readTime": "5 min",
+      "content": [
+        [
+          "Choose the right path",
+          [
+            "New or eligible number: follow the supported Meta onboarding flow.",
+            "Existing number: confirm whether migration or a supported coexistence arrangement is available for your integration.",
+            "The available path depends on the number's current configuration and WatsBuy's implementation."
+          ]
+        ],
+        [
+          "General setup",
+          [
+            "Start the Meta connection flow from WatsBuy.",
+            "Select or create the relevant WhatsApp Business Account if supported.",
+            "Enter the phone number and complete the verification method offered by Meta.",
+            "Complete registration and any account setup steps.",
+            "Return to WatsBuy and confirm the connection status.",
+            "Send a test message using the supported workflow."
+          ]
+        ],
+        [
+          "Important",
+          [
+            "Do not delete an existing WhatsApp account or uninstall WhatsApp Business unless the official flow for your chosen setup specifically requires it."
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "templates",
+      "category": "WhatsApp Business API & Messaging",
+      "title": "Create and submit a WhatsApp message template",
+      "summary": "Prepare a template and follow its review status before using it in a campaign.",
+      "updated": "29 Oct 2026",
+      "popular": true,
+      "readTime": "4 min",
+      "content": [
+        [
+          "Steps",
+          [
+            "Open the relevant WhatsApp Business Account in Meta or the template interface provided by your integration.",
+            "Create a template name and select the language.",
+            "Choose the appropriate message category.",
+            "Write the message body and add supported header, footer, buttons or variables as needed.",
+            "Review the content for accuracy and compliance with current Meta policies.",
+            "Submit the template for review.",
+            "Wait for the relevant approval status.",
+            "Sync or refresh template information in WatsBuy if supported.",
+            "Test the approved template before using it in a campaign."
+          ]
+        ],
+        [
+          "Troubleshooting",
+          [
+            "If rejected, read Meta's reason and edit the template accordingly.",
+            "Check variable formatting and category selection.",
+            "Remember that approval and delivery are different events; an approved template is not guaranteed to reach every recipient."
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "gateway",
+      "category": "Payment Gateway Integration",
+      "title": "Connect a payment gateway to WatsBuy",
+      "summary": "Configure checkout and test the payment-to-order flow before accepting live payments.",
+      "updated": "29 Oct 2026",
+      "popular": true,
+      "readTime": "6 min",
+      "content": [
+        [
+          "Before you begin",
+          [
+            "Create an account with a payment provider supported by WatsBuy and complete its onboarding.",
+            "Confirm that the provider supports your country, business type and intended payment methods.",
+            "Have access to the provider dashboard and the required account permissions."
+          ]
+        ],
+        [
+          "Steps",
+          [
+            "In WatsBuy, open Dashboard → Settings → Payments (confirm the menu name in your live product).",
+            "Select a gateway available for your merchant country and plan.",
+            "Connect using the method implemented by WatsBuy, such as an authorization flow or secure credential configuration.",
+            "Enable only payment methods supported by both the provider and WatsBuy.",
+            "Use test mode where available to test successful and failed payments.",
+            "Confirm order statuses and payment notifications update correctly.",
+            "Check that duplicate notifications do not create duplicate orders.",
+            "Activate live payments only after testing and provider approval."
+          ]
+        ],
+        [
+          "Collection vs confirmation vs settlement",
+          [
+            "Collection: the customer submits payment for an order.",
+            "Confirmation: WatsBuy receives a transaction result from the provider.",
+            "Settlement: the provider transfers applicable funds to the merchant, subject to its schedule and deductions."
+          ]
+        ],
+        [
+          "Security",
+          [
+            "Never share passwords, secret API keys or authentication tokens in support tickets, chat or email."
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "catalogue",
+      "category": "Catalogue & Store Management",
+      "title": "Upload your first product",
+      "summary": "Add product information and verify how it appears in your storefront.",
+      "updated": "29 Oct 2026",
+      "popular": false,
+      "readTime": "3 min",
+      "content": [
+        [
+          "Steps",
+          [
+            "Open the catalogue or products area in your WatsBuy dashboard.",
+            "Add a product name, description, price and availability.",
+            "Upload clear product images and add variants if supported.",
+            "Assign a category and confirm inventory details.",
+            "Save the product and preview it in your store.",
+            "Check the product on a mobile screen and test the customer journey."
+          ]
+        ],
+        [
+          "If a product is missing",
+          [
+            "Check whether it is saved, active and available for the current store.",
+            "Review required fields and image upload errors.",
+            "If catalogue sync is enabled, check the source platform and latest sync status."
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "ai-assistant",
+      "category": "AI Shopping Assistant",
+      "title": "Configure the AI shopping assistant",
+      "summary": "Set up product knowledge and a helpful, accurate customer experience.",
+      "updated": "29 Oct 2026",
+      "popular": false,
+      "readTime": "5 min",
+      "content": [
+        [
+          "Preparation",
+          [
+            "Confirm that the AI shopping assistant is enabled for your WatsBuy account.",
+            "Make sure product names, descriptions, prices and availability are accurate.",
+            "Identify which AI capabilities are live in your account."
+          ]
+        ],
+        [
+          "Setup checklist",
+          [
+            "Open the AI or assistant settings available in your dashboard.",
+            "Connect the supported product catalogue or knowledge source.",
+            "Configure the assistant's tone and allowed response behavior.",
+            "Define when a conversation should be transferred to a human agent, if supported.",
+            "Test product discovery, pricing questions and out-of-stock scenarios.",
+            "Review responses for inaccurate claims before enabling the assistant for customers."
+          ]
+        ],
+        [
+          "Feature availability",
+          [
+            "Image-based discovery, voice shopping, automated order placement and advanced recommendations should be described as available only when implemented and enabled for the merchant."
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "campaigns",
+      "category": "Campaigns & Broadcasts",
+      "title": "Prepare a WhatsApp campaign responsibly",
+      "summary": "Check audience eligibility, templates, consent and campaign results.",
+      "updated": "29 Oct 2026",
+      "popular": false,
+      "readTime": "4 min",
+      "content": [
+        [
+          "Before sending",
+          [
+            "Define the campaign objective and audience.",
+            "Confirm you have the required customer permissions and respect opt-out requests.",
+            "Use the appropriate approved template where required by Meta.",
+            "Review the message, offer details, links and destination page.",
+            "Send a test to an internal recipient where supported."
+          ]
+        ],
+        [
+          "After sending",
+          [
+            "Review delivery and read metrics where available.",
+            "Monitor customer replies and opt-outs.",
+            "Use the actual campaign data to improve future messages.",
+            "Follow current Meta policies and applicable laws."
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "orders",
+      "category": "Orders & Fulfilment",
+      "title": "Understand order statuses",
+      "summary": "Learn what each status means and which updates may be automatic.",
+      "updated": "29 Oct 2026",
+      "popular": false,
+      "readTime": "3 min",
+      "content": [
+        [
+          "Common statuses",
+          [
+            "Pending: awaiting the next required action or confirmation.",
+            "Processing: the order is being prepared.",
+            "Shipped: the order has been dispatched.",
+            "Delivered: delivery has been confirmed.",
+            "Cancelled: the order has been cancelled.",
+            "Returned: the order has been returned, where supported."
+          ]
+        ],
+        [
+          "Keep records accurate",
+          [
+            "Check whether each status is updated manually or synchronized from a connected service.",
+            "Review payment confirmation separately from order status.",
+            "If a status appears incorrect, record the order reference and contact support without sharing sensitive payment credentials."
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "analytics",
+      "category": "Analytics & Integrations",
+      "title": "Understand key commerce metrics",
+      "summary": "Use clear definitions to interpret your store and campaign performance.",
+      "updated": "29 Oct 2026",
+      "popular": false,
+      "readTime": "4 min",
+      "content": [
+        [
+          "Common metrics",
+          [
+            "Messages sent: messages submitted for sending.",
+            "Messages delivered: messages confirmed as delivered.",
+            "Read rate: delivered messages recorded as read, where available.",
+            "Product views: recorded product-view events.",
+            "Cart conversion: percentage of tracked carts that progress to completed orders.",
+            "Order conversion: percentage of a defined audience or session group that completes an order.",
+            "Average order value: qualifying order value divided by the number of qualifying orders.",
+            "Abandoned carts: carts meeting your configured abandonment definition."
+          ]
+        ],
+        [
+          "Interpret results carefully",
+          [
+            "Check the metric's calculation, time window and data source.",
+            "Avoid comparing metrics that use different definitions or attribution windows.",
+            "Engagement alone does not prove that a campaign caused additional sales."
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "security",
+      "category": "Account, Security & Privacy",
+      "title": "Keep your WatsBuy account secure",
+      "summary": "Follow safe practices for account access, payment configuration and support requests.",
+      "updated": "29 Oct 2026",
+      "popular": false,
+      "readTime": "3 min",
+      "content": [
+        [
+          "Recommended practices",
+          [
+            "Use strong, unique credentials and enable available account protections.",
+            "Give team members only the permissions they need.",
+            "Remove access when a team member no longer needs it.",
+            "Use official provider dashboards for sensitive billing and account actions.",
+            "Never share passwords, secret API keys, one-time codes or full payment-card details in support tickets.",
+            "Review WatsBuy's published Privacy Policy and Terms of Service."
+          ]
+        ],
+        [
+          "Need help?",
+          [
+            "When submitting a ticket, provide the relevant error message, approximate time and non-sensitive account reference. Remove personal or payment details from screenshots where possible."
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "troubleshoot",
+      "category": "Troubleshooting Centre",
+      "title": "What to include when reporting a technical issue",
+      "summary": "Help the support team investigate a problem without exposing sensitive information.",
+      "updated": "29 Oct 2026",
+      "popular": false,
+      "readTime": "3 min",
+      "content": [
+        [
+          "Include these details",
+          [
+            "The affected service: Meta, WhatsApp, payments, catalogue, AI, orders or analytics.",
+            "The error message and approximate time it occurred.",
+            "The steps you took before the issue appeared.",
+            "A relevant order or ticket reference, if applicable.",
+            "A screenshot with sensitive details removed."
+          ]
+        ],
+        [
+          "Do not include",
+          [
+            "Passwords, one-time codes, secret API keys, authentication tokens or full payment-card details."
+          ]
+        ],
+        [
+          "Before submitting",
+          [
+            "Check the relevant Help Center guide and try the documented steps. If the issue persists, open a support ticket and keep the ticket reference for follow-up."
+          ]
+        ]
+      ]
+    }
+  ]
+}

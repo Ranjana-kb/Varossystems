@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Merchant Sign In — WatsBuy</title>
+  <meta name="description" content="Sign in to your WatsBuy merchant dashboard to manage your WhatsApp store, catalog, and orders.">
+  <link rel="icon" type="image/png" href="assets/images/watsbuy-mark.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+  
+</head>
+<body>
+  <!-- Top Announcement -->
+  <div class="announcement">
+    <span><strong>THE WHATSAPP-BASED E-COMMERCE SAAS PLATFORM</strong> · Turn WhatsApp into your digital storefront</span>
+  </div>
+
+  <!-- Shared Header Navigation -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html" aria-label="WatsBuy Home">
+        <img src="references/WatsBuy Logo.jpeg" alt="WatsBuy Logo" class="brand-logo-img">
+        <span class="brand-tagline">Your Store on WhatsApp</span>
+      </a>
+      
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+      
+      <nav class="nav-links" id="navLinks">
+        <a href="why-watsbuy.html" class="">Why WatsBuy?</a>
+        <div class="nav-item">
+          <button type="button" class="">Solutions ▾</button>
+          <div class="dropdown">
+            <a href="solutions.html">All Solutions</a>
+            <a href="solutions.html#retail">Retail &amp; D2C</a>
+            <a href="solutions.html#wholesale">Wholesalers &amp; Distributors</a>
+            <a href="solutions.html#multi-store">Multi-Store Businesses</a>
+            <a href="solutions.html#smb">Growing SMBs</a>
+            <a href="solutions.html#enterprise">Enterprise Scale</a>
+          </div>
+        </div>
+        <a href="pricing.html" class="">Pricing</a>
+        <a href="enterprise.html" class="">Enterprise</a>
+        <a href="reseller.html" class="">Become a Reseller</a>
+        <div class="nav-item">
+          <button type="button" class="">Resources ▾</button>
+          <div class="dropdown">
+            <a href="faq.html">Help Centre</a>
+            <a href="faq.html#faqs">FAQs</a>
+            <a href="getting-started.html">Get Started</a>
+          </div>
+        </div>
+        <a href="signin.html" class="active">Sign In</a>
+        <a class="btn btn-primary btn-sm" href="demo.html">Book a Demo →</a>
+      </nav>
+    </div>
+  </header>
+
+
+  <section class="signin-section">
+    <div class="container">
+      <div class="signin-grid">
+        <!-- Left Column: Sign-In Form -->
+        <div class="signin-form-card">
+          <div class="eyebrow" style="margin-bottom:8px;"><span class="dot"></span> MERCHANT LOGIN</div>
+          <h1 style="font-size:clamp(26px,3vw,34px);font-weight:850;color:var(--navy);letter-spacing:-1px;margin:0 0 10px;">Sign in to your account</h1>
+          <p style="font-size:14px;color:var(--slate);line-height:1.6;margin:0 0 28px;">Welcome back. Access your store dashboard, product catalog, and conversational orders.</p>
+
+          <form id="merchantSignInForm" onsubmit="handleMerchantSignIn(event)">
+            <div class="field" style="margin-bottom:18px;">
+              <label for="signinEmail" style="display:block;font-size:13.5px;font-weight:700;color:var(--navy);margin-bottom:7px;">Business Email *</label>
+              <input id="signinEmail" type="email" required placeholder="name@yourbusiness.com" autocomplete="email" style="width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:9px;font-size:14px;box-sizing:border-box;">
+            </div>
+
+            <div class="field" style="margin-bottom:24px;">
+              <label for="signinPassword" style="display:block;font-size:13.5px;font-weight:700;color:var(--navy);margin-bottom:7px;">Password *</label>
+              <input id="signinPassword" type="password" required placeholder="••••••••" autocomplete="current-password" style="width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:9px;font-size:14px;box-sizing:border-box;">
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block" style="width:100%;padding:14px;font-size:14.5px;font-weight:750;">
+              Sign In →
+            </button>
+
+            <!-- Authentication Feedback Notice (No fake success, no storing passwords) -->
+            <div id="signinStatus" style="display:none;margin-top:18px;padding:14px 16px;border-radius:10px;font-size:13px;line-height:1.55;"></div>
+          </form>
+        </div>
+
+        <!-- Right Column: Preview Panel (Verified Existing Product Info, Zero Invented Metrics, Zero AI claims) -->
+        <div class="signin-preview-panel">
+          <div class="eyebrow" style="margin-bottom:8px;"><span class="dot"></span> PLATFORM CAPABILITIES</div>
+          <h2 style="font-size:22px;color:var(--navy);font-weight:800;letter-spacing:-0.5px;margin:0 0 8px;">Unified Storefront Management</h2>
+          <p style="font-size:13.5px;color:var(--slate);line-height:1.6;margin:0 0 20px;">Everything your business needs to sell, fulfill orders, and engage customers on WhatsApp.</p>
+
+          <div class="preview-features-list">
+            <div class="preview-feature-item">
+              <span class="preview-icon">🛍️</span>
+              <div>
+                <strong>Dual-Platform Storefront</strong>
+                <p>Synchronize product catalogues and inventory between your online store and WhatsApp.</p>
+              </div>
+            </div>
+
+            <div class="preview-feature-item">
+              <span class="preview-icon">⚡</span>
+              <div>
+                <strong>Native WhatsApp Flows Checkout</strong>
+                <p>Provide frictionless 2-tap in-chat ordering without external web redirects.</p>
+              </div>
+            </div>
+
+            <div class="preview-feature-item">
+              <span class="preview-icon">💳</span>
+              <div>
+                <strong>Integrated Instant Payments</strong>
+                <p>Accept seamless UPI, debit/credit cards, and netbanking settlements within WhatsApp.</p>
+              </div>
+            </div>
+
+            <div class="preview-feature-item">
+              <span class="preview-icon">📦</span>
+              <div>
+                <strong>Automated Order Notifications</strong>
+                <p>Send real-time order confirmations, shipping updates, and abandoned-cart reminders.</p>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:flex;align-items:center;gap:10px;padding-top:20px;margin-top:24px;border-top:1px solid var(--line);font-size:12px;color:var(--slate);">
+            <span style="color:var(--green);font-size:15px;font-weight:bold;">✓</span>
+            <span>Official WhatsApp Business Cloud API &amp; Meta Business Verification Integration</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <!-- Shared Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo-badge">
+            <img src="references/WatsBuy Logo.jpeg" alt="WatsBuy Logo" class="footer-logo-img">
+            <span class="footer-tagline">Your Store on WhatsApp</span>
+          </div>
+        </div>
+
+        <div>
+          <h4>Solutions</h4>
+          <a href="solutions.html#retail">Retail &amp; D2C</a>
+          <a href="solutions.html#wholesale">Wholesalers &amp; Distributors</a>
+          <a href="solutions.html#multi-store">Multi-Store Businesses</a>
+          <a href="solutions.html#smb">Growing SMBs</a>
+          <a href="solutions.html#enterprise">Enterprise Scale</a>
+        </div>
+
+        <div>
+          <h4>Platform</h4>
+          <a href="why-watsbuy.html">Why WatsBuy?</a>
+          <a href="pricing.html">Pricing Plans</a>
+          <a href="enterprise.html">Enterprise Workflows</a>
+          <a href="reseller.html">Become a Reseller</a>
+          <a href="getting-started.html">Get Started</a>
+          <a href="faq.html">Help Centre &amp; FAQs</a>
+        </div>
+
+        <div>
+          <h4>Company &amp; Contact</h4>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact Us</a>
+          <a href="demo.html">Book a Demo</a>
+        </div>
+
+        <div>
+          <h4>Policies &amp; Legal</h4>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="refund.html">Refund Policy</a>
+          <a href="shipping.html">Shipping Policy</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; <span id="year"></span> WatsBuy. All rights reserved.
+        </div>
+        <div class="footer-bottom-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="refund.html">Refund Policy</a>
+          <a href="shipping.html">Shipping Policy</a>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Form Submission Confirmation Popup Modal -->
+  <div class="confirmation-modal" id="confirmationModal" role="dialog" aria-modal="true" aria-labelledby="confirmationModalTitle" onclick="handleConfirmationBackdropClick(event)">
+    <div class="confirmation-dialog">
+      <button type="button" class="confirmation-close" onclick="closeConfirmationModal()" aria-label="Close confirmation">&times;</button>
+      <div class="confirmation-icon-wrap">
+        <span class="confirmation-check">✓</span>
+      </div>
+      <div class="confirmation-badge" id="confirmationBadge">SUBMISSION CONFIRMED</div>
+      <h3 class="confirmation-title" id="confirmationModalTitle">Thank You!</h3>
+      <p class="confirmation-message" id="confirmationModalMessage">
+        Your enquiry has been successfully received. Our team will review your details and contact you shortly.
+      </p>
+      <div class="confirmation-actions">
+        <button type="button" class="btn btn-primary" onclick="closeConfirmationModal()" style="min-width:140px;padding:11px 24px;">
+          Done
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Shared Scripts -->
+  <script>
+    // Mobile navigation toggle & auto-close
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    function closeMobileMenu() {
+      if (navLinks) {
+        navLinks.classList.remove('open');
+        if (menuToggle) {
+          menuToggle.setAttribute('aria-expanded', 'false');
+          menuToggle.textContent = '☰';
+        }
+      }
+    }
+
+    function toggleMobileMenu() {
+      if (navLinks && menuToggle) {
+        const isOpen = navLinks.classList.toggle('open');
+        menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        menuToggle.textContent = isOpen ? '✕' : '☰';
+      }
+    }
+
+    if (menuToggle) {
+      menuToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleMobileMenu();
+      });
+    }
+
+    if (navLinks) {
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          closeMobileMenu();
+        });
+      });
+    }
+
+    document.addEventListener('click', (e) => {
+      if (navLinks && menuToggle && !navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+        closeMobileMenu();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeMobileMenu();
+      }
+    });
+
+    // Dynamic current year
+    const yr = document.getElementById('year');
+    if (yr) yr.textContent = new Date().getFullYear();
+
+    // Form Submission Confirmation Modal Handlers
+    function showConfirmationModal(title, message, badgeText) {
+      const modal = document.getElementById('confirmationModal');
+      if (!modal) return;
+      if (title) document.getElementById('confirmationModalTitle').textContent = title;
+      if (message) document.getElementById('confirmationModalMessage').innerHTML = message;
+      if (badgeText) document.getElementById('confirmationBadge').textContent = badgeText;
+      modal.classList.add('open');
+      modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeConfirmationModal() {
+      const modal = document.getElementById('confirmationModal');
+      if (!modal) return;
+      modal.classList.remove('open');
+      modal.style.display = 'none';
+      document.body.style.overflow = '';
+    }
+
+    function handleConfirmationBackdropClick(e) {
+      if (e.target.id === 'confirmationModal') {
+        closeConfirmationModal();
+      }
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeConfirmationModal();
+      }
+    });
+  </script>
+
+
+
+  <script>
+    function handleMerchantSignIn(e) {
+      e.preventDefault();
+      const pwd = document.getElementById('signinPassword');
+      const status = document.getElementById('signinStatus');
+
+      // Clear password immediately so credentials are never retained in memory or browser storage
+      if (pwd) pwd.value = '';
+
+      if (status) {
+        status.style.display = 'block';
+        status.style.background = '#FEF3F2';
+        status.style.border = '1px solid #FECDCA';
+        status.style.color = '#B42318';
+        status.innerHTML = '<strong>Backend Authentication Required:</strong> This static frontend demo does not connect to a live authentication server or database. Credentials were not stored or processed. A real sign-in requires an active backend server.';
+      }
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Transparent SaaS Pricing Plans — WatsBuy — WatsBuy</title>
+  <meta name="description" content="Explore WatsBuy subscription plans: Basic $99/mo, Growth $179/mo, Premium $249/mo, and Enterprise Custom. Save 15% on annual billing.">
+  <link rel="icon" type="image/png" href="assets/images/watsbuy-mark.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+  
+</head>
+<body>
+  <!-- Top Announcement -->
+  <div class="announcement">
+    <span><strong>THE WHATSAPP-BASED E-COMMERCE SAAS PLATFORM</strong> · Turn WhatsApp into your digital storefront</span>
+  </div>
+
+  <!-- Shared Header Navigation -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html" aria-label="WatsBuy Home">
+        <img src="references/WatsBuy Logo.jpeg" alt="WatsBuy Logo" class="brand-logo-img">
+        <span class="brand-tagline">Your Store on WhatsApp</span>
+      </a>
+      
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+      
+      <nav class="nav-links" id="navLinks">
+        <a href="why-watsbuy.html" class="">Why WatsBuy?</a>
+        <div class="nav-item">
+          <button type="button" class="">Solutions ▾</button>
+          <div class="dropdown">
+            <a href="solutions.html">All Solutions</a>
+            <a href="solutions.html#retail">Retail &amp; D2C</a>
+            <a href="solutions.html#wholesale">Wholesalers &amp; Distributors</a>
+            <a href="solutions.html#multi-store">Multi-Store Businesses</a>
+            <a href="solutions.html#smb">Growing SMBs</a>
+            <a href="solutions.html#enterprise">Enterprise Scale</a>
+          </div>
+        </div>
+        <a href="pricing.html" class="active">Pricing</a>
+        <a href="enterprise.html" class="">Enterprise</a>
+        <a href="reseller.html" class="">Become a Reseller</a>
+        <div class="nav-item">
+          <button type="button" class="">Resources ▾</button>
+          <div class="dropdown">
+            <a href="faq.html">Help Centre</a>
+            <a href="faq.html#faqs">FAQs</a>
+            <a href="getting-started.html">Get Started</a>
+          </div>
+        </div>
+        <a href="signin.html" class="">Sign In</a>
+        <a class="btn btn-primary btn-sm" href="demo.html">Book a Demo →</a>
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- Hero Section -->
+  <section class="page-hero">
+    <div class="container text-left" style="max-width:900px;margin:0 auto;text-align:center;">
+      <div class="eyebrow"><span class="dot"></span> PRICING</div>
+      <h1 style="font-size:clamp(32px,4vw,50px);line-height:1.1;letter-spacing:-2px;margin:16px 0 14px;font-weight:850;color:var(--navy);">
+        WatsBuy subscription plans
+      </h1>
+      <p style="font-size:16px;line-height:1.65;color:var(--slate);max-width:680px;margin:0 auto 24px;">
+        Every customer you onboard generates recurring monthly revenue.
+      </p>
+
+      <!-- Monthly / Annual Tabs with 15% discount -->
+      <div class="pricing-toggle-wrap">
+        <div class="pricing-toggle" role="tablist" aria-label="Billing frequency toggle">
+          <button type="button" class="toggle-btn active" id="btnMonthly" role="tab" aria-selected="true">Monthly</button>
+          <button type="button" class="toggle-btn" id="btnYearly" role="tab" aria-selected="false">Yearly <span class="annual-badge">Save 15%</span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 Plan Cards (from references/Global Pricing.jpeg) -->
+  <section class="section" style="padding-top:10px;">
+    <div class="container">
+      <div class="pricing-grid">
+        <!-- Basic Plan ($99) -->
+        <div class="price-card">
+          <div class="plan-name">Basic</div>
+          <div class="price-box">
+            <span class="price-val" id="priceBasic">$99</span>
+            <span class="price-period" id="periodBasic">/month</span>
+            <span class="price-annual-note" id="noteBasic" style="display:none;">$1,010 / year (save $178)</span>
+          </div>
+          <div class="plan-subtitle">Get Started</div>
+          
+          <ul class="plan-features">
+            <li><span class="check">✓</span> <strong>Storage up to 5GB- 100 Products</strong></li>
+            <li><span class="check">✓</span> <strong>WhatsApp Flows</strong></li>
+            <li><span class="check">✓</span> <strong>Payments &amp; Orders</strong></li>
+          </ul>
+
+          <div style="margin-top:auto;display:flex;flex-direction:column;gap:8px;">
+            <a class="btn btn-primary btn-block" href="getting-started.html">Get Started →</a>
+            <a class="btn btn-outline btn-block" href="trial.html?plan=Basic" onclick="openTrialModal('Basic Plan', event)">7-Day Free Trial</a>
+          </div>
+        </div>
+
+        <!-- Growth Plan ($179 - MOST POPULAR) -->
+        <div class="price-card popular">
+          <div class="badge-popular">MOST POPULAR</div>
+          <div class="plan-name">Growth</div>
+          <div class="price-box">
+            <span class="price-val" id="priceGrowth">$179</span>
+            <span class="price-period" id="periodGrowth">/month</span>
+            <span class="price-annual-note" id="noteGrowth" style="display:none;">$1,826 / year (save $322)</span>
+          </div>
+          <div class="plan-subtitle">Most Popular</div>
+          
+          <ul class="plan-features">
+            <li><span class="check">✓</span> <strong>Storage up to 10 GB-200 Products</strong></li>
+            <li><span class="check">✓</span> <strong>WhatsApp Flows</strong></li>
+            <li><span class="check">✓</span> <strong>Payments &amp; Orders</strong></li>
+          </ul>
+
+          <div style="margin-top:auto;display:flex;flex-direction:column;gap:8px;">
+            <a class="btn btn-primary btn-block" href="getting-started.html">Get Started</a>
+            <a class="btn btn-outline btn-block" href="trial.html?plan=Growth" onclick="openTrialModal('Growth Plan', event)" style="background:#E5A93C;color:#000000;border-color:#E5A93C;font-weight:750;">7-Day Free Trial</a>
+          </div>
+        </div>
+
+        <!-- Premium Plan ($249) -->
+        <div class="price-card">
+          <div class="plan-name">Premium</div>
+          <div class="price-box">
+            <span class="price-val" id="pricePremium">$249</span>
+            <span class="price-period" id="periodPremium">/month</span>
+            <span class="price-annual-note" id="notePremium" style="display:none;">$2,540 / year (save $448)</span>
+          </div>
+          <div class="plan-subtitle">Full Power</div>
+          
+          <ul class="plan-features">
+            <li><span class="check">✓</span> <strong>Storage up to 20 GB-500 Products</strong></li>
+            <li><span class="check">✓</span> <strong>WhatsApp Flows</strong></li>
+            <li><span class="check">✓</span> <strong>Payments &amp; Orders</strong></li>
+          </ul>
+
+          <div style="margin-top:auto;display:flex;flex-direction:column;gap:8px;">
+            <a class="btn btn-outline btn-block" href="getting-started.html">Get Started</a>
+            <a class="btn btn-outline btn-block" href="trial.html?plan=Premium" onclick="openTrialModal('Premium Plan', event)">7-Day Free Trial</a>
+          </div>
+        </div>
+
+        <!-- Enterprise Custom Plan -->
+        <div class="price-card" style="background:#FAFBFB;">
+          <div class="plan-name">Enterprise</div>
+          <div class="price-box">
+            <span class="price-val">Custom</span>
+          </div>
+          <div class="plan-subtitle">Tailored</div>
+          
+          <ul class="plan-features">
+            <li><span class="check">✓</span> <strong>Fully Workflow Customization</strong></li>
+            <li><span class="check">✓</span> <strong>WhatsApp Flows</strong></li>
+            <li><span class="check">✓</span> <strong>Payments &amp; Orders</strong></li>
+          </ul>
+
+          <div style="margin-top:auto;">
+            <a class="btn btn-outline btn-block" href="contact.html?interest=Enterprise%20Solutions">Contact Enterprise Sales →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Frequently Asked Questions from references -->
+      <div style="margin-top:48px;">
+        <div class="section-head" style="margin-bottom:28px;">
+          <span class="section-kicker">PRICING FAQS</span>
+          <h2>Frequently Asked Questions</h2>
+        </div>
+        <div style="max-width:850px;margin:0 auto;display:flex;flex-direction:column;gap:14px;">
+          <div style="background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;box-shadow:var(--shadow-sm);">
+            <strong style="color:var(--navy);font-size:15px;display:block;margin-bottom:8px;">Do you offer annual billing discounts?</strong>
+            <p style="color:var(--slate);font-size:13.5px;line-height:1.65;margin:0;">Yes. Save 15% with annual billing compared with paying monthly for 12 months. Annual subscriptions are billed upfront.</p>
+          </div>
+          <div style="background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;box-shadow:var(--shadow-sm);">
+            <strong style="color:var(--navy);font-size:15px;display:block;margin-bottom:8px;">Do I get both an online storefront and WhatsApp storefront?</strong>
+            <p style="color:var(--slate);font-size:13.5px;line-height:1.65;margin:0;">Yes. All standard plans include a dual-platform online and WhatsApp storefront with custom domain integration and centralized product, inventory and order management.</p>
+          </div>
+          <div style="background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;box-shadow:var(--shadow-sm);">
+            <strong style="color:var(--navy);font-size:15px;display:block;margin-bottom:8px;">Are Meta messaging and payment processing fees included?</strong>
+            <p style="color:var(--slate);font-size:13.5px;line-height:1.65;margin:0;">No. Applicable <a href="https://whatsappbusiness.com/products/platform-pricing/" target="_blank" rel="noopener" style="color:var(--green);font-weight:700;text-decoration:underline;">Meta charges</a>, payment gateway fees, taxes and optional add-on charges are separate.</p>
+          </div>
+          <div style="background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;box-shadow:var(--shadow-sm);">
+            <strong style="color:var(--navy);font-size:15px;display:block;margin-bottom:8px;">Can I upgrade my plan?</strong>
+            <p style="color:var(--slate);font-size:13.5px;line-height:1.65;margin:0;">Contact the WatsBuy team to discuss plan upgrades and billing adjustments.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Important Billing Inclusions & Meta Fees (with official Meta Link) -->
+      <div style="background:var(--grey-bg);border:1px solid var(--line);border-radius:18px;padding:26px;margin-top:36px;font-size:13px;color:var(--slate);line-height:1.65;">
+        <h4 style="font-size:15px;color:var(--navy);margin:0 0 12px;display:flex;align-items:center;gap:8px;">
+          <span>ℹ️</span> Important billing inclusions &amp; Meta fees
+        </h4>
+        <ul style="margin:0 0 16px;padding-left:18px;">
+          <li style="margin-bottom:8px;"><strong>Platform SaaS Inclusions:</strong> All subscription plans include the WhatsApp Store, official WhatsApp Cloud API connectivity, WhatsApp Flows checkout, catalogue, cart and order management, standard payment functionality, bulk broadcasting, Meta-approved messaging workflows, customer management, and analytics.</li>
+          <li style="margin-bottom:8px;"><strong>Premium Add-ons &amp; Custom Integrations:</strong> Custom ERP integrations, custom workflows, additional message templates, payment gateway integrations, third-party API integrations, and other business-specific customizations are available at additional cost, subject to technical feasibility and applicable provider approvals.</li>
+          <li style="margin-bottom:8px;"><strong>Official Meta Conversation Fees:</strong> WhatsApp Business messaging fees are determined directly by Meta based on conversation categories (Marketing, Utility, Authentication, and Service) and the recipient country code. Because Meta messaging rates vary across global regions and may be updated periodically by Meta, WatsBuy does not mark up or invent messaging rates. Meta conversation fees are billed directly through your Meta Business Manager payment method or passed through strictly at actual Meta rates.</li>
+          <li><strong>No Hidden Lock-In:</strong> Monthly subscriptions can be upgraded or adjusted at any billing cycle. Annual billing provides an upfront 15% discount across all standard tiers.</li>
+        </ul>
+        <div style="padding-top:12px;border-top:1px solid var(--line);">
+          <a href="https://whatsappbusiness.com/products/platform-pricing/" target="_blank" rel="noopener" style="color:var(--green);font-weight:750;display:inline-flex;align-items:center;gap:6px;">
+            <span>🌐</span> View Official Meta WhatsApp Business Platform Pricing Documentation ↗
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 7-Day Free Trial Modal (Opens trial registration form, hidden on initial load) -->
+  <div class="trial-modal" id="trialModal" role="dialog" aria-modal="true" aria-labelledby="trialModalTitle" onclick="handleTrialBackdropClick(event)">
+    <div class="trial-modal-dialog">
+      <div class="trial-modal-header">
+        <div>
+          <div class="eyebrow" style="margin-bottom:6px;"><span class="dot"></span> 7-DAY FREE TRIAL · INSTANT SETUP</div>
+          <h3 id="trialModalTitle" style="font-size:24px;font-weight:850;color:var(--navy);letter-spacing:-0.8px;margin:0 0 4px;">
+            Start Your 7-Day Free Trial
+          </h3>
+          <p style="font-size:13.5px;color:var(--slate);margin:0;line-height:1.5;">
+            Enter your business details below to activate your 7-day free trial. Full access, zero commitment.
+          </p>
+        </div>
+        <button type="button" class="trial-modal-close" onclick="closeTrialModal()" aria-label="Close dialog">&times;</button>
+      </div>
+
+      <form id="trialForm" onsubmit="handleTrialSubmit(event)">
+        <div class="form-grid">
+          <div class="field">
+            <label for="trialName">Full Name *</label>
+            <input id="trialName" name="trialName" type="text" required placeholder="Full Name">
+          </div>
+          <div class="field">
+            <label for="trialEmail">Business Email *</label>
+            <input id="trialEmail" name="trialEmail" type="email" required placeholder="Work Email Address">
+          </div>
+          <div class="field">
+            <label for="trialPhone">WhatsApp Number *</label>
+            <input id="trialPhone" name="trialPhone" type="tel" required placeholder="WhatsApp Phone Number">
+          </div>
+          <div class="field">
+            <label for="trialCompany">Company / Business Name *</label>
+            <input id="trialCompany" name="trialCompany" type="text" required placeholder="Company / Business Name">
+          </div>
+          <div class="field">
+            <label for="trialOrderVolume">Monthly Orders *</label>
+            <select id="trialOrderVolume" name="trialOrderVolume" required>
+              <option value="">Select Monthly Orders *</option>
+              <option value="Under 500">Under 500 orders / month</option>
+              <option value="500 - 2,000">500 – 2,000 orders / month</option>
+              <option value="2,000 - 10,000">2,000 – 10,000 orders / month</option>
+              <option value="10,000+">10,000+ orders / month (Enterprise)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="trialInterest">Area of Interest *</label>
+            <select id="trialInterest" name="trialInterest" required>
+              <option value="">Select Area of Interest *</option>
+              <option value="Basic Plan">Basic Plan</option>
+              <option value="Growth Plan">Growth Plan</option>
+              <option value="Premium Plan">Premium Plan</option>
+              <option value="Retail & D2C Brands">Retail &amp; D2C Brands</option>
+              <option value="Wholesalers & Distributors">Wholesalers &amp; Distributors</option>
+              <option value="Enterprise Custom Plan">Enterprise Custom Plan</option>
+              <option value="Become a Reseller">Become a Reseller</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="trialCountry">Country *</label>
+            <select id="trialCountry" name="trialCountry" required>
+              <option value="">Select your country *</option>
+              <option value="India">India</option>
+              <option value="United Arab Emirates">United Arab Emirates</option>
+              <option value="Saudi Arabia">Saudi Arabia</option>
+              <option value="United States">United States</option>
+              <option value="United Kingdom">United Kingdom</option>
+              <option value="Singapore">Singapore</option>
+              <option value="Australia">Australia</option>
+              <option value="Canada">Canada</option>
+              <option value="Germany">Germany</option>
+              <option value="France">France</option>
+              <option value="Qatar">Qatar</option>
+              <option value="Oman">Oman</option>
+              <option value="Kuwait">Kuwait</option>
+              <option value="Bahrain">Bahrain</option>
+              <option value="Malaysia">Malaysia</option>
+              <option value="Indonesia">Indonesia</option>
+              <option value="Philippines">Philippines</option>
+              <option value="South Africa">South Africa</option>
+              <option value="Nigeria">Nigeria</option>
+              <option value="Kenya">Kenya</option>
+              <option value="Egypt">Egypt</option>
+              <option value="Brazil">Brazil</option>
+              <option value="Mexico">Mexico</option>
+              <option value="Netherlands">Netherlands</option>
+              <option value="Spain">Spain</option>
+              <option value="Italy">Italy</option>
+              <option value="Switzerland">Switzerland</option>
+              <option value="Ireland">Ireland</option>
+              <option value="New Zealand">New Zealand</option>
+              <option value="Japan">Japan</option>
+              <option value="South Korea">South Korea</option>
+              <option value="Vietnam">Vietnam</option>
+              <option value="Thailand">Thailand</option>
+              <option value="Bangladesh">Bangladesh</option>
+              <option value="Sri Lanka">Sri Lanka</option>
+              <option value="Pakistan">Pakistan</option>
+              <option value="Nepal">Nepal</option>
+              <option value="Other">Other Country</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="trialAddress">Business Address *</label>
+            <input id="trialAddress" name="trialAddress" type="text" required placeholder="Office / Business Address, City, Region">
+          </div>
+          <div class="field full">
+            <label for="trialMessage">Notes &amp; Requirements</label>
+            <textarea id="trialMessage" name="trialMessage" rows="2" placeholder="Tell us about your product catalogue, sales channels, or specific requirements..."></textarea>
+          </div>
+        </div>
+
+        <div style="margin-top:20px;">
+          <button type="submit" class="btn btn-primary btn-block" style="padding:13px 24px;font-size:14.5px;font-weight:750;">
+            Start 7-Day Free Trial →
+          </button>
+        </div>
+
+        <div class="form-status" id="trialStatus">
+          ✓ <strong>7-Day Free Trial request received!</strong> We've received your business details. Our onboarding team will configure your trial environment and send your WhatsApp storefront credentials shortly.
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Shared Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo-badge">
+            <img src="references/WatsBuy Logo.jpeg" alt="WatsBuy Logo" class="footer-logo-img">
+            <span class="footer-tagline">Your Store on WhatsApp</span>
+          </div>
+        </div>
+
+        <div>
+          <h4>Solutions</h4>
+          <a href="solutions.html#retail">Retail &amp; D2C</a>
+          <a href="solutions.html#wholesale">Wholesalers &amp; Distributors</a>
+          <a href="solutions.html#multi-store">Multi-Store Businesses</a>
+          <a href="solutions.html#smb">Growing SMBs</a>
+          <a href="solutions.html#enterprise">Enterprise Scale</a>
+        </div>
+
+        <div>
+          <h4>Platform</h4>
+          <a href="why-watsbuy.html">Why WatsBuy?</a>
+          <a href="pricing.html">Pricing Plans</a>
+          <a href="enterprise.html">Enterprise Workflows</a>
+          <a href="reseller.html">Become a Reseller</a>
+          <a href="getting-started.html">Get Started</a>
+          <a href="faq.html">Help Centre &amp; FAQs</a>
+        </div>
+
+        <div>
+          <h4>Company &amp; Contact</h4>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact Us</a>
+          <a href="demo.html">Book a Demo</a>
+        </div>
+
+        <div>
+          <h4>Policies &amp; Legal</h4>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="refund.html">Refund Policy</a>
+          <a href="shipping.html">Shipping Policy</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; <span id="year"></span> WatsBuy. All rights reserved.
+        </div>
+        <div class="footer-bottom-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="refund.html">Refund Policy</a>
+          <a href="shipping.html">Shipping Policy</a>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Form Submission Confirmation Popup Modal -->
+  <div class="confirmation-modal" id="confirmationModal" role="dialog" aria-modal="true" aria-labelledby="confirmationModalTitle" onclick="handleConfirmationBackdropClick(event)">
+    <div class="confirmation-dialog">
+      <button type="button" class="confirmation-close" onclick="closeConfirmationModal()" aria-label="Close confirmation">&times;</button>
+      <div class="confirmation-icon-wrap">
+        <span class="confirmation-check">✓</span>
+      </div>
+      <div class="confirmation-badge" id="confirmationBadge">SUBMISSION CONFIRMED</div>
+      <h3 class="confirmation-title" id="confirmationModalTitle">Thank You!</h3>
+      <p class="confirmation-message" id="confirmationModalMessage">
+        Your enquiry has been successfully received. Our team will review your details and contact you shortly.
+      </p>
+      <div class="confirmation-actions">
+        <button type="button" class="btn btn-primary" onclick="closeConfirmationModal()" style="min-width:140px;padding:11px 24px;">
+          Done
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Shared Scripts -->
+  <script>
+    // Mobile navigation toggle & auto-close
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    function closeMobileMenu() {
+      if (navLinks) {
+        navLinks.classList.remove('open');
+        if (menuToggle) {
+          menuToggle.setAttribute('aria-expanded', 'false');
+          menuToggle.textContent = '☰';
+        }
+      }
+    }
+
+    function toggleMobileMenu() {
+      if (navLinks && menuToggle) {
+        const isOpen = navLinks.classList.toggle('open');
+        menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        menuToggle.textContent = isOpen ? '✕' : '☰';
+      }
+    }
+
+    if (menuToggle) {
+      menuToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleMobileMenu();
+      });
+    }
+
+    if (navLinks) {
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          closeMobileMenu();
+        });
+      });
+    }
+
+    document.addEventListener('click', (e) => {
+      if (navLinks && menuToggle && !navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+        closeMobileMenu();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeMobileMenu();
+      }
+    });
+
+    // Dynamic current year
+    const yr = document.getElementById('year');
+    if (yr) yr.textContent = new Date().getFullYear();
+
+    // Form Submission Confirmation Modal Handlers
+    function showConfirmationModal(title, message, badgeText) {
+      const modal = document.getElementById('confirmationModal');
+      if (!modal) return;
+      if (title) document.getElementById('confirmationModalTitle').textContent = title;
+      if (message) document.getElementById('confirmationModalMessage').innerHTML = message;
+      if (badgeText) document.getElementById('confirmationBadge').textContent = badgeText;
+      modal.classList.add('open');
+      modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeConfirmationModal() {
+      const modal = document.getElementById('confirmationModal');
+      if (!modal) return;
+      modal.classList.remove('open');
+      modal.style.display = 'none';
+      document.body.style.overflow = '';
+    }
+
+    function handleConfirmationBackdropClick(e) {
+      if (e.target.id === 'confirmationModal') {
+        closeConfirmationModal();
+      }
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeConfirmationModal();
+      }
+    });
+  </script>
+
+  <script>
+    function openTrialModal(planInterest, e) {
+      if (e && e.preventDefault) e.preventDefault();
+      const modal = document.getElementById('trialModal');
+      if (!modal) return;
+      modal.classList.add('open');
+      modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+      if (planInterest) {
+        const select = document.getElementById('trialInterest');
+        if (select) {
+          for (let i = 0; i < select.options.length; i++) {
+            if (select.options[i].value.toLowerCase().includes(planInterest.toLowerCase()) ||
+                select.options[i].text.toLowerCase().includes(planInterest.toLowerCase())) {
+              select.selectedIndex = i;
+              break;
+            }
+          }
+        }
+      }
+      const nameInput = document.getElementById('trialName');
+      if (nameInput) setTimeout(() => nameInput.focus(), 100);
+    }
+
+    function closeTrialModal() {
+      const modal = document.getElementById('trialModal');
+      if (!modal) return;
+      modal.classList.remove('open');
+      modal.style.display = 'none';
+      document.body.style.overflow = '';
+    }
+
+    function handleTrialBackdropClick(e) {
+      if (e.target.id === 'trialModal') {
+        closeTrialModal();
+      }
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeTrialModal();
+      }
+    });
+
+    (function initTrialParams() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const planParam = urlParams.get('plan') || urlParams.get('interest');
+      if (planParam) {
+        const select = document.getElementById('trialInterest');
+        if (select) {
+          for (let i = 0; i < select.options.length; i++) {
+            if (select.options[i].value.toLowerCase().includes(planParam.toLowerCase()) ||
+                select.options[i].text.toLowerCase().includes(planParam.toLowerCase())) {
+              select.selectedIndex = i;
+              break;
+            }
+          }
+        }
+      }
+      if (window.location.hash === '#openTrial' || window.location.hash === '#trialModal') {
+        window.addEventListener('DOMContentLoaded', () => openTrialModal());
+      }
+    })();
+
+    function handleTrialSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('trialName');
+      const email = document.getElementById('trialEmail');
+      const phone = document.getElementById('trialPhone');
+      const company = document.getElementById('trialCompany');
+      const volume = document.getElementById('trialOrderVolume');
+      const interest = document.getElementById('trialInterest');
+      const country = document.getElementById('trialCountry');
+      const address = document.getElementById('trialAddress');
+
+      if (name && !name.value.trim()) { name.focus(); return; }
+      if (email && !email.value.trim()) { email.focus(); return; }
+      if (phone && !phone.value.trim()) { phone.focus(); return; }
+      if (company && !company.value.trim()) { company.focus(); return; }
+      if (volume && !volume.value.trim()) { volume.focus(); return; }
+      if (interest && !interest.value.trim()) { interest.focus(); return; }
+      if (country && !country.value.trim()) { country.focus(); return; }
+      if (address && !address.value.trim()) { address.focus(); return; }
+
+      const status = document.getElementById('trialStatus');
+      if (status) {
+        status.style.display = 'block';
+        status.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+      closeTrialModal();
+      if (typeof showConfirmationModal === 'function') {
+        showConfirmationModal(
+          '7-Day Free Trial Activated!',
+          'Thank you for signing up for the WatsBuy 7-Day Free Trial. Your business details have been received, and our onboarding team is setting up your WhatsApp storefront environment. You will receive your login credentials and setup guide shortly.',
+          'TRIAL ACTIVATED'
+        );
+      }
+    }
+  </script>
+
+  <script>
+    // Monthly / Annual (Save 15%) billing toggle script
+    const btnMonthly = document.getElementById('btnMonthly');
+    const btnYearly = document.getElementById('btnYearly');
+    const priceBasic = document.getElementById('priceBasic');
+    const priceGrowth = document.getElementById('priceGrowth');
+    const pricePremium = document.getElementById('pricePremium');
+    const periodBasic = document.getElementById('periodBasic');
+    const periodGrowth = document.getElementById('periodGrowth');
+    const periodPremium = document.getElementById('periodPremium');
+    const noteBasic = document.getElementById('noteBasic');
+    const noteGrowth = document.getElementById('noteGrowth');
+    const notePremium = document.getElementById('notePremium');
+
+    function setMonthly() {
+      btnMonthly.classList.add('active');
+      btnMonthly.setAttribute('aria-selected', 'true');
+      btnYearly.classList.remove('active');
+      btnYearly.setAttribute('aria-selected', 'false');
+
+      priceBasic.textContent = '$99';
+      periodBasic.textContent = '/month';
+      noteBasic.style.display = 'none';
+
+      priceGrowth.textContent = '$179';
+      periodGrowth.textContent = '/month';
+      noteGrowth.style.display = 'none';
+
+      pricePremium.textContent = '$249';
+      periodPremium.textContent = '/month';
+      notePremium.style.display = 'none';
+    }
+
+    function setYearly() {
+      btnYearly.classList.add('active');
+      btnYearly.setAttribute('aria-selected', 'true');
+      btnMonthly.classList.remove('active');
+      btnMonthly.setAttribute('aria-selected', 'false');
+
+      // 15% discount calculation: monthly * 12 * 0.85
+      // Basic: 99 * 12 * 0.85 = $1,010 / yr -> $84 / mo
+      priceBasic.textContent = '$84';
+      periodBasic.textContent = '/mo billed annually';
+      noteBasic.textContent = '$1,010 / year (save $178)';
+      noteBasic.style.display = 'block';
+
+      // Growth: 179 * 12 * 0.85 = $1,826 / yr -> $152 / mo
+      priceGrowth.textContent = '$152';
+      periodGrowth.textContent = '/mo billed annually';
+      noteGrowth.textContent = '$1,826 / year (save $322)';
+      noteGrowth.style.display = 'block';
+
+      // Premium: 249 * 12 * 0.85 = $2,540 / yr -> $212 / mo
+      pricePremium.textContent = '$212';
+      periodPremium.textContent = '/mo billed annually';
+      notePremium.textContent = '$2,540 / year (save $448)';
+      notePremium.style.display = 'block';
+    }
+
+    if (btnMonthly && btnYearly) {
+      btnMonthly.addEventListener('click', setMonthly);
+      btnYearly.addEventListener('click', setYearly);
+    }
+  </script>
+
+</body>
+</html>
