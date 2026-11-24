@@ -238,6 +238,18 @@ if (!contactHtml.includes("Let's Build") || !contactHtml.includes('Get in Touch'
     errors.push(`contact.html missing required contact form field: id="${fieldId}"`);
   }
 });
+if (!contactHtml.includes('+971 50 292 7230') || !contactHtml.includes('tel:+971502927230') || !contactHtml.includes('https://wa.me/971502927230')) {
+  errors.push('contact.html missing verified phone or WhatsApp link (+971 50 292 7230)');
+}
+if (!contactHtml.includes('https://youtube.com/@WatsBuy') ||
+    !contactHtml.includes('https://www.linkedin.com/company/watsbuy') ||
+    !contactHtml.includes('https://www.instagram.com/wats_buy/') ||
+    !contactHtml.includes('https://www.facebook.com/profile.php?id=61592760365721')) {
+  errors.push('contact.html missing official social URLs (YouTube, LinkedIn, Instagram, Facebook)');
+}
+if (contactHtml.includes('Telegram') || contactHtml.includes('> X<') || contactHtml.includes('𝕏')) {
+  errors.push('contact.html should not contain X or Telegram social links');
+}
 
 // Check signin.html specific requirements
 const signinHtml = fs.readFileSync('signin.html', 'utf8');
@@ -265,6 +277,9 @@ if (resellerHtml.includes('Book a Partner Demo')) {
 }
 if (!resellerHtml.includes('Apply as a Partner')) {
   errors.push('reseller.html missing "Apply as a Partner"');
+}
+if (!resellerHtml.includes('id="partnerCountry"') || !resellerHtml.includes('name="partnerCountry"')) {
+  errors.push('reseller.html missing Country selector field');
 }
 const fakeResellerValues = ['Rahul Sharma', 'Apex Digital', 'Ramesh Menon', 'Acme Retailers'];
 fakeResellerValues.forEach(val => {
@@ -489,6 +504,24 @@ if ((!styleCss.includes('height: 80px') && !styleCss.includes('height: 96px') &&
 }
 if (!styleCss.includes('#079D4F')) {
   errors.push('style.css missing green highlight for tagline');
+}
+
+// L. Verify Header Logo replacement with WatsBuy WhatsApp Shopping Logo.png without duplicate tagline
+htmlFiles.forEach(file => {
+  const content = fs.readFileSync(file, 'utf8');
+  if (!content.includes('WatsBuy WhatsApp Shopping Logo.png')) {
+    errors.push(`${file} missing WatsBuy WhatsApp Shopping Logo in header`);
+  }
+  if (!content.includes('class="brand-logo-img"')) {
+    errors.push(`${file} missing brand-logo-img class on header logo`);
+  }
+  const headerMatch = content.match(/<header class="nav">([\s\S]*?)<\/header>/);
+  if (headerMatch && headerMatch[1].includes('class="brand-tagline"')) {
+    errors.push(`${file} contains duplicate text tagline in header`);
+  }
+});
+if (!styleCss.includes('.brand-logo-img')) {
+  errors.push('style.css missing .brand-logo-img styles');
 }
 
 // 14. Check internal link integrity across all 16 files

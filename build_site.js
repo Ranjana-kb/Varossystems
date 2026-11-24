@@ -102,9 +102,8 @@ function renderNav(activePage) {
   <!-- Shared Header Navigation -->
   <header class="nav">
     <div class="container nav-inner">
-      <a class="brand" href="index.html" aria-label="WatsBuy Home">
-        <img src="references/WatsBuy Logo.jpeg" alt="WatsBuy Logo" class="brand-logo-img">
-        <span class="brand-tagline">Your Store on WhatsApp</span>
+      <a class="brand" href="index.html" aria-label="WatsBuy - Your Store on WhatsApp">
+        <img src="references/WatsBuy WhatsApp Shopping Logo.png" alt="WatsBuy - Your Store on WhatsApp" class="brand-logo-img">
       </a>
       
       <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>

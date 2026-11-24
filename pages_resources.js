@@ -110,9 +110,53 @@ const resellerBody = `
               <label for="partnerPhone">WhatsApp Phone Number *</label>
               <input id="partnerPhone" type="tel" required placeholder="WhatsApp Phone Number">
             </div>
-            <div class="field full">
+            <div class="field">
+              <label for="partnerCountry">Country *</label>
+              <select id="partnerCountry" name="partnerCountry" required>
+                <option value="">Select your country *</option>
+                <option value="India">India</option>
+                <option value="United Arab Emirates">United Arab Emirates</option>
+                <option value="Saudi Arabia">Saudi Arabia</option>
+                <option value="United States">United States</option>
+                <option value="United Kingdom">United Kingdom</option>
+                <option value="Singapore">Singapore</option>
+                <option value="Australia">Australia</option>
+                <option value="Canada">Canada</option>
+                <option value="Germany">Germany</option>
+                <option value="France">France</option>
+                <option value="Qatar">Qatar</option>
+                <option value="Oman">Oman</option>
+                <option value="Kuwait">Kuwait</option>
+                <option value="Bahrain">Bahrain</option>
+                <option value="Malaysia">Malaysia</option>
+                <option value="Indonesia">Indonesia</option>
+                <option value="Philippines">Philippines</option>
+                <option value="South Africa">South Africa</option>
+                <option value="Nigeria">Nigeria</option>
+                <option value="Kenya">Kenya</option>
+                <option value="Egypt">Egypt</option>
+                <option value="Brazil">Brazil</option>
+                <option value="Mexico">Mexico</option>
+                <option value="Netherlands">Netherlands</option>
+                <option value="Spain">Spain</option>
+                <option value="Italy">Italy</option>
+                <option value="Switzerland">Switzerland</option>
+                <option value="Ireland">Ireland</option>
+                <option value="New Zealand">New Zealand</option>
+                <option value="Japan">Japan</option>
+                <option value="South Korea">South Korea</option>
+                <option value="Vietnam">Vietnam</option>
+                <option value="Thailand">Thailand</option>
+                <option value="Bangladesh">Bangladesh</option>
+                <option value="Sri Lanka">Sri Lanka</option>
+                <option value="Pakistan">Pakistan</option>
+                <option value="Nepal">Nepal</option>
+                <option value="Other">Other Country</option>
+              </select>
+            </div>
+            <div class="field">
               <label for="partnerAddress">Business Address &amp; Location *</label>
-              <input id="partnerAddress" name="partnerAddress" type="text" required placeholder="City, State / Region, Country">
+              <input id="partnerAddress" name="partnerAddress" type="text" required placeholder="City, State / Region">
             </div>
             <div class="field full">
               <label for="partnerMessage">Tell Us About Your Client Base &amp; Goals</label>
@@ -139,6 +183,31 @@ const resellerScripts = `
   <script>
     function handleResellerSubmit(e) {
       e.preventDefault();
+      const name = document.getElementById('partnerName');
+      const agency = document.getElementById('agencyName');
+      const email = document.getElementById('partnerEmail');
+      const phone = document.getElementById('partnerPhone');
+      const country = document.getElementById('partnerCountry');
+      const address = document.getElementById('partnerAddress');
+      const message = document.getElementById('partnerMessage');
+
+      if (name && !name.value.trim()) { name.focus(); return; }
+      if (agency && !agency.value.trim()) { agency.focus(); return; }
+      if (email && !email.value.trim()) { email.focus(); return; }
+      if (phone && !phone.value.trim()) { phone.focus(); return; }
+      if (country && !country.value.trim()) { country.focus(); return; }
+      if (address && !address.value.trim()) { address.focus(); return; }
+
+      const formData = {
+        name: name ? name.value.trim() : '',
+        agency: agency ? agency.value.trim() : '',
+        email: email ? email.value.trim() : '',
+        phone: phone ? phone.value.trim() : '',
+        country: country ? country.value.trim() : '',
+        address: address ? address.value.trim() : '',
+        message: message ? message.value.trim() : ''
+      };
+
       const status = document.getElementById('resellerStatus');
       if (status) {
         status.style.display = 'block';
@@ -783,7 +852,11 @@ const contactBody = `
               <div class="contact-glyph">☏</div>
               <div>
                 <strong style="display:block;color:var(--navy);font-size:14px;margin-bottom:3px;">WhatsApp &amp; Phone</strong>
-                <span style="display:block;font-size:12.5px;color:var(--slate);line-height:1.5;">Official business contact number to be added.</span>
+                <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+                  <a href="tel:+971502927230" style="color:var(--green);font-size:13px;font-weight:750;text-decoration:none;">+971 50 292 7230</a>
+                  <span style="color:var(--slate);font-size:12px;">·</span>
+                  <a href="https://wa.me/971502927230" target="_blank" rel="noopener noreferrer" style="color:var(--green);font-size:12.5px;font-weight:700;display:inline-flex;align-items:center;gap:4px;">Chat on WhatsApp ↗</a>
+                </div>
               </div>
             </div>
 
@@ -799,16 +872,11 @@ const contactBody = `
           <div style="margin-top:28px;padding-top:22px;border-top:1px solid var(--line);">
             <h3 style="font-size:16px;color:var(--navy);font-weight:750;margin:0 0 12px;">Follow WatsBuy</h3>
             <div class="social-links-grid">
-              <span class="social-badge"><i>in</i> LinkedIn</span>
-              <span class="social-badge"><i>f</i> Facebook</span>
-              <span class="social-badge"><i>◎</i> Instagram</span>
-              <span class="social-badge"><i>▶</i> YouTube</span>
-              <span class="social-badge"><i>𝕏</i> X</span>
-              <span class="social-badge"><i>➤</i> Telegram</span>
+              <a href="https://www.linkedin.com/company/watsbuy" target="_blank" rel="noopener noreferrer" class="social-badge" aria-label="LinkedIn"><i>in</i> LinkedIn</a>
+              <a href="https://www.facebook.com/profile.php?id=61592760365721" target="_blank" rel="noopener noreferrer" class="social-badge" aria-label="Facebook"><i>f</i> Facebook</a>
+              <a href="https://www.instagram.com/wats_buy/" target="_blank" rel="noopener noreferrer" class="social-badge" aria-label="Instagram"><i>◎</i> Instagram</a>
+              <a href="https://youtube.com/@WatsBuy" target="_blank" rel="noopener noreferrer" class="social-badge" aria-label="YouTube"><i>▶</i> YouTube</a>
             </div>
-            <p style="font-size:11.5px;color:var(--slate);margin:12px 0 0;line-height:1.5;">
-              Social profiles will become clickable once the official URLs are configured.
-            </p>
           </div>
         </div>
 

@@ -18,9 +18,8 @@
   <!-- Shared Header Navigation -->
   <header class="nav">
     <div class="container nav-inner">
-      <a class="brand" href="index.html" aria-label="WatsBuy Home">
-        <img src="references/WatsBuy Logo.jpeg" alt="WatsBuy Logo" class="brand-logo-img">
-        <span class="brand-tagline">Your Store on WhatsApp</span>
+      <a class="brand" href="index.html" aria-label="WatsBuy - Your Store on WhatsApp">
+        <img src="references/WatsBuy WhatsApp Shopping Logo.png" alt="WatsBuy - Your Store on WhatsApp" class="brand-logo-img">
       </a>
       
       <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
@@ -157,9 +156,53 @@
               <label for="partnerPhone">WhatsApp Phone Number *</label>
               <input id="partnerPhone" type="tel" required placeholder="WhatsApp Phone Number">
             </div>
-            <div class="field full">
+            <div class="field">
+              <label for="partnerCountry">Country *</label>
+              <select id="partnerCountry" name="partnerCountry" required>
+                <option value="">Select your country *</option>
+                <option value="India">India</option>
+                <option value="United Arab Emirates">United Arab Emirates</option>
+                <option value="Saudi Arabia">Saudi Arabia</option>
+                <option value="United States">United States</option>
+                <option value="United Kingdom">United Kingdom</option>
+                <option value="Singapore">Singapore</option>
+                <option value="Australia">Australia</option>
+                <option value="Canada">Canada</option>
+                <option value="Germany">Germany</option>
+                <option value="France">France</option>
+                <option value="Qatar">Qatar</option>
+                <option value="Oman">Oman</option>
+                <option value="Kuwait">Kuwait</option>
+                <option value="Bahrain">Bahrain</option>
+                <option value="Malaysia">Malaysia</option>
+                <option value="Indonesia">Indonesia</option>
+                <option value="Philippines">Philippines</option>
+                <option value="South Africa">South Africa</option>
+                <option value="Nigeria">Nigeria</option>
+                <option value="Kenya">Kenya</option>
+                <option value="Egypt">Egypt</option>
+                <option value="Brazil">Brazil</option>
+                <option value="Mexico">Mexico</option>
+                <option value="Netherlands">Netherlands</option>
+                <option value="Spain">Spain</option>
+                <option value="Italy">Italy</option>
+                <option value="Switzerland">Switzerland</option>
+                <option value="Ireland">Ireland</option>
+                <option value="New Zealand">New Zealand</option>
+                <option value="Japan">Japan</option>
+                <option value="South Korea">South Korea</option>
+                <option value="Vietnam">Vietnam</option>
+                <option value="Thailand">Thailand</option>
+                <option value="Bangladesh">Bangladesh</option>
+                <option value="Sri Lanka">Sri Lanka</option>
+                <option value="Pakistan">Pakistan</option>
+                <option value="Nepal">Nepal</option>
+                <option value="Other">Other Country</option>
+              </select>
+            </div>
+            <div class="field">
               <label for="partnerAddress">Business Address &amp; Location *</label>
-              <input id="partnerAddress" name="partnerAddress" type="text" required placeholder="City, State / Region, Country">
+              <input id="partnerAddress" name="partnerAddress" type="text" required placeholder="City, State / Region">
             </div>
             <div class="field full">
               <label for="partnerMessage">Tell Us About Your Client Base &amp; Goals</label>
@@ -359,6 +402,31 @@
   <script>
     function handleResellerSubmit(e) {
       e.preventDefault();
+      const name = document.getElementById('partnerName');
+      const agency = document.getElementById('agencyName');
+      const email = document.getElementById('partnerEmail');
+      const phone = document.getElementById('partnerPhone');
+      const country = document.getElementById('partnerCountry');
+      const address = document.getElementById('partnerAddress');
+      const message = document.getElementById('partnerMessage');
+
+      if (name && !name.value.trim()) { name.focus(); return; }
+      if (agency && !agency.value.trim()) { agency.focus(); return; }
+      if (email && !email.value.trim()) { email.focus(); return; }
+      if (phone && !phone.value.trim()) { phone.focus(); return; }
+      if (country && !country.value.trim()) { country.focus(); return; }
+      if (address && !address.value.trim()) { address.focus(); return; }
+
+      const formData = {
+        name: name ? name.value.trim() : '',
+        agency: agency ? agency.value.trim() : '',
+        email: email ? email.value.trim() : '',
+        phone: phone ? phone.value.trim() : '',
+        country: country ? country.value.trim() : '',
+        address: address ? address.value.trim() : '',
+        message: message ? message.value.trim() : ''
+      };
+
       const status = document.getElementById('resellerStatus');
       if (status) {
         status.style.display = 'block';

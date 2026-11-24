@@ -116,7 +116,7 @@ img {
   display: inline-flex;
   flex-direction: row;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   text-decoration: none;
   line-height: 1;
   padding: 0;
@@ -124,42 +124,108 @@ img {
   flex-shrink: 0;
 }
 
-/* Enlarged WatsBuy logo with strictly preserved proportions and zero dead whitespace */
 .brand-logo-img {
-  height: 56px;
+  height: 46px;
+  max-height: 46px;
   width: auto;
-  max-width: 220px;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+  background-color: #FFFFFF;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.brand:hover .brand-logo-img {
+  opacity: 0.95;
+  transform: scale(1.01);
+}
+
+.brand-mark-crop {
+  position: relative;
+  display: block;
+  width: 56px;
+  height: 56px;
+  flex: 0 0 56px;
+  overflow: hidden;
+}
+
+.brand-mark-img {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 96px;
+  height: 96px;
+  max-width: none;
   display: block;
   object-fit: contain;
   margin: 0;
   padding: 0;
+  transform: translateX(-50%);
   transition: transform 0.2s ease;
 }
 
-.brand:hover .brand-logo-img {
-  transform: scale(1.02);
+.brand:hover .brand-mark-img {
+  transform: translateX(-50%) scale(1.02);
 }
 
-/* Clean, readable brand tagline without leading dot, highlighted in green */
+.brand-lockup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  line-height: 1;
+}
+
+.brand-wordmark-line {
+  position: relative;
+  display: block;
+  padding-bottom: 12px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.brand-wordmark {
+  display: block;
+  color: var(--navy);
+  font-family: "Arial Rounded MT Bold", "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 34px;
+  font-weight: 900;
+  letter-spacing: -1.8px;
+  line-height: 1;
+}
+
+.brand-wordmark-accent {
+  color: var(--green);
+}
+
+.brand-domain {
+  position: absolute;
+  right: 4px;
+  bottom: 0;
+  color: var(--navy);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  line-height: 1;
+}
+
 .brand-tagline,
 .brand-tagline-highlight {
-  display: inline-block;
+  display: block;
+  color: var(--green);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Inter, Arial, sans-serif;
-  font-size: 12.5px;
-  font-weight: 700;
-  color: #079D4F;
-  letter-spacing: 0.25px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.15px;
   text-transform: none;
-  margin: 0;
-  padding: 0 0 0 12px;
+  margin: 3px 0 0;
+  padding: 0;
   white-space: nowrap;
   background: transparent;
   border: none;
-  border-left: 1.5px solid var(--line);
   border-radius: 0;
-  line-height: 1.25;
+  line-height: 1.15;
 }
-
 .nav-links {
   display: flex;
   align-items: center;
@@ -1326,7 +1392,7 @@ section[id], div[id], article[id], main[id] {
 }
 .social-links-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 10px;
   margin-top: 12px;
 }
@@ -1341,6 +1407,16 @@ section[id], div[id], article[id], main[id] {
   font-weight: 700;
   color: var(--navy);
   background: #fff;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+a.social-badge:hover {
+  border-color: var(--green);
+  color: var(--green);
+  background: var(--mint-light);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(7, 157, 79, 0.12);
+  text-decoration: none;
 }
 .social-badge i {
   font-style: normal;
@@ -2267,9 +2343,14 @@ section[id], div[id], article[id], main[id] {
 @media (max-width: 768px) {
   .container { width: min(100% - 32px, 640px); }
   .nav-inner { min-height: 58px; height: auto; padding: 5px 0; }
-  .brand { gap: 10px; }
-  .brand-logo-img { height: 46px; }
-  .brand-tagline, .brand-tagline-highlight { font-size: 11px; padding-left: 10px; }
+  .brand { gap: 8px; }
+  .brand-logo-img { height: 38px; max-height: 38px; }
+  .brand-mark-crop { width: 48px; height: 48px; flex-basis: 48px; }
+  .brand-mark-img { width: 82px; height: 82px; }
+  .brand-wordmark { font-size: 30px; letter-spacing: -1.6px; }
+  .brand-wordmark-line { padding-bottom: 11px; }
+  .brand-domain { font-size: 11px; }
+  .brand-tagline, .brand-tagline-highlight { font-size: 11px; letter-spacing: 0.1px; }
   .cards-grid-2, .cards-grid-3, .cards-grid-4, .pricing-grid, .market-shift-grid, .demo-hero-grid, .hero-split-grid, .problem-split-grid, .arch-split-grid { grid-template-columns: 1fr; }
   .market-shift-banner { flex-direction: column; text-align: center; gap: 10px; }
   .journey-track { overflow-x: auto; padding-bottom: 8px; grid-template-columns: repeat(7, minmax(75px, 1fr)); }
@@ -2286,9 +2367,14 @@ section[id], div[id], article[id], main[id] {
 
 @media (max-width: 480px) {
   .nav-inner { min-height: 52px; padding: 4px 0; }
-  .brand { gap: 8px; }
-  .brand-logo-img { height: 38px; }
-  .brand-tagline, .brand-tagline-highlight { font-size: 9.5px; padding-left: 8px; }
+  .brand { gap: 6px; }
+  .brand-logo-img { height: 32px; max-height: 32px; }
+  .brand-mark-crop { width: 42px; height: 42px; flex-basis: 42px; }
+  .brand-mark-img { width: 72px; height: 72px; }
+  .brand-wordmark { font-size: 26px; letter-spacing: -1.35px; }
+  .brand-wordmark-line { padding-bottom: 9px; }
+  .brand-domain { font-size: 10px; }
+  .brand-tagline, .brand-tagline-highlight { font-size: 9px; letter-spacing: 0; }
   .menu-toggle { font-size: 18px; padding: 6px 10px; }
   .flow-track { grid-template-columns: 1fr; }
   .flow-track-5 { grid-template-columns: 1fr; }
