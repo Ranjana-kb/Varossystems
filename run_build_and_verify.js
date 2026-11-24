@@ -506,11 +506,11 @@ if (!styleCss.includes('#079D4F')) {
   errors.push('style.css missing green highlight for tagline');
 }
 
-// L. Verify Header Logo replacement with WatsBuy WhatsApp Shopping Logo.png without duplicate tagline
+// L. Verify Header & Footer Logo replacement with WatsBuy WhatsApp Shopping Logo.png without duplicate tagline
 htmlFiles.forEach(file => {
   const content = fs.readFileSync(file, 'utf8');
   if (!content.includes('WatsBuy WhatsApp Shopping Logo.png')) {
-    errors.push(`${file} missing WatsBuy WhatsApp Shopping Logo in header`);
+    errors.push(`${file} missing WatsBuy WhatsApp Shopping Logo`);
   }
   if (!content.includes('class="brand-logo-img"')) {
     errors.push(`${file} missing brand-logo-img class on header logo`);
@@ -518,6 +518,10 @@ htmlFiles.forEach(file => {
   const headerMatch = content.match(/<header class="nav">([\s\S]*?)<\/header>/);
   if (headerMatch && headerMatch[1].includes('class="brand-tagline"')) {
     errors.push(`${file} contains duplicate text tagline in header`);
+  }
+  const footerMatch = content.match(/<footer class="footer">([\s\S]*?)<\/footer>/);
+  if (footerMatch && !footerMatch[1].includes('WatsBuy WhatsApp Shopping Logo.png')) {
+    errors.push(`${file} missing WatsBuy WhatsApp Shopping Logo in footer`);
   }
 });
 if (!styleCss.includes('.brand-logo-img')) {
