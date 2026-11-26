@@ -103,7 +103,7 @@ function renderNav(activePage) {
   <header class="nav">
     <div class="container nav-inner">
       <a class="brand" href="index.html" aria-label="WatsBuy - Your Store on WhatsApp">
-        <img src="references/WatsBuy WhatsApp Shopping Logo.png" alt="WatsBuy - Your Store on WhatsApp" class="brand-logo-img">
+        <img src="references/watsbuy logo exact.png" alt="WatsBuy - Your Store on WhatsApp" class="brand-logo-img">
       </a>
       
       <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
@@ -147,7 +147,7 @@ function renderFooter() {
       <div class="footer-grid">
         <div class="footer-brand">
           <div class="footer-logo-badge">
-            <img src="references/WatsBuy WhatsApp Shopping Logo.png" alt="WatsBuy - Your Store on WhatsApp" class="footer-logo-img">
+            <img src="references/watsbuy logo exact.png" alt="WatsBuy - Your Store on WhatsApp" class="footer-logo-img">
           </div>
         </div>
 
